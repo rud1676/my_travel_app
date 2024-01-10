@@ -1,0 +1,40 @@
+<svg width="290" height="316" viewBox="0 0 290 316" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_1331_2325)">
+<path d="M2 0H288V104H2V0Z" fill="#F9FFD6" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 14H2V13H288V14Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 29H2V28H288V29Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 43H2V42H288V43Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 58H2V57H288V58Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 74H2V73H288V74Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 89H2V88H288V89Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 104H2V103H288V104Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path d="M2 104H288V208H2V104Z" fill="#F9FFD6" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 118H2V117H288V118Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 133H2V132H288V133Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 147H2V146H288V147Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 162H2V161H288V162Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 178H2V177H288V178Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 193H2V192H288V193Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 208H2V207H288V208Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path d="M2 208H288V312H2V208Z" fill="#F9FFD6" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 222H2V221H288V222Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 237H2V236H288V237Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 251H2V250H288V251Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 266H2V265H288V266Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 282H2V281H288V282Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 297H2V296H288V297Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M288 312H2V311H288V312Z" fill="#8BDAEB" fill-opacity="0.3" shape-rendering="crispEdges"/>
+</g>
+<defs>
+<filter id="filter0_d_1331_2325" x="0" y="0" width="290" height="316" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1331_2325"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1331_2325" result="shape"/>
+</filter>
+</defs>
+</svg>
