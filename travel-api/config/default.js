@@ -16,7 +16,7 @@ module.exports = {
   },
   uploader: {
     useS3: true,
-    bucket: process.env.S3_BUCKET_NAME || 'travel-package'
+    bucket: process.env.S3_BUCKET_NAME || 'jootravel'
   },
   JWT: {
     JWT_SECRET: 'travel'

@@ -56,7 +56,7 @@ module.exports.imageUpload = multer({
 module.exports.deleteS3File = async (fileKey) => {
   const s3 = new AWS.S3();
   s3.deleteObject({
-    Bucket: 'nalida',
+    Bucket: 'jootravel',
     Key: fileKey
   });
 };
