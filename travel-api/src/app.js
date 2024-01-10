@@ -1,9 +1,10 @@
+require('dotenv').config();
+
 const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
 const passportConfig = require('./passport');
 const { errHandler } = require('./err');
-require('dotenv').config();
 
 const userRouter = require('./common/routers/user');
 const globalRouter = require('./common/routers/global');
