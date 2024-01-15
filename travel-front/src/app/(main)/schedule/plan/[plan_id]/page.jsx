@@ -26,7 +26,8 @@ const PlanDetail = ({ params }) => {
   const { data: plan } = useSuspenseQuery({
     queryKey: ["mytravel", plan_id],
     queryFn: () => myPlanApi.getPlanById(plan_id),
-    enabled: false,
+    enabled: true,
+    refetchOnMount: "always",
   });
 
   const onClickDeleteButton = (planId) => {
@@ -57,7 +58,7 @@ const PlanDetail = ({ params }) => {
 
   useEffect(() => {
     ChnageDetials(plan, curdate);
-  }, [curdate]);
+  }, [curdate, plan]);
   return (
     <>
       <Header

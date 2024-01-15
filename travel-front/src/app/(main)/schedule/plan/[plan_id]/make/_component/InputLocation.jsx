@@ -44,11 +44,13 @@ const MapSearchComponent = ({
     setPosition(pos);
     setCenter(pos);
     setForm((prev) => {
-      prev.locationName = address;
-      prev.location = pos;
-      prev.photo = photo;
-      prev.phone = phoneNumber;
-      return prev;
+      const temp = JSON.parse(JSON.stringify(prev));
+
+      temp.locationName = address;
+      temp.location = pos;
+      temp.photo = photo;
+      temp.phone = phoneNumber;
+      return temp;
     });
   };
 
@@ -118,7 +120,7 @@ const MapSearchComponent = ({
 
 const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
   const mapRef = useRef();
-  const [addr, setAddr] = useState(form?.locationName);
+  const [addr, setAddr] = useState("");
 
   const onMapClick = async (event) => {
     const { latLng } = event;
@@ -129,12 +131,14 @@ const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
       setAddr(data.results[0].formatted_address);
       let photo = "";
       if (data.results[0].photos) photo = data.results[0]?.photos[0].getUrl();
-      const temp = { latitude, longitude };
+      const temppoint = { latitude, longitude };
       setForm((prev) => {
-        prev.locationName = data.results[0].formatted_address;
-        prev.photo = photo;
-        prev.location = temp;
-        return prev;
+        const temp = JSON.parse(JSON.stringify(prev));
+
+        temp.locationName = data.results[0].formatted_address;
+        temp.photo = photo;
+        temp.location = temppoint;
+        return temp;
       });
     }
   };
@@ -142,7 +146,8 @@ const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
   useEffect(() => {
     if (mapOpen) mapRef.current.style.display = "block";
     else mapRef.current.style.display = "none";
-  }, [mapOpen]);
+    setAddr(form.locationName);
+  }, [mapOpen, form]);
 
   return (
     <Make.InputTitleWrapper>

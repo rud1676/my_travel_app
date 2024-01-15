@@ -11,7 +11,7 @@ import InputLocation from "./InputLocation";
 import InputMemo from "./InputMemo";
 import InputTime from "./InputTime";
 
-const MakeDetail = ({ form, setForm, curdate, day, setMapOpen, mapOpen }) => {
+const MakeDetail = ({ form, day, setForm, setMapOpen, mapOpen }) => {
   const [yeart, setYeart] = useState("");
   const [montht, setMontht] = useState("");
   const [datet, setDatet] = useState("");
@@ -20,13 +20,12 @@ const MakeDetail = ({ form, setForm, curdate, day, setMapOpen, mapOpen }) => {
     let year;
     let month;
     let date;
-
-    if (day) [year, month, date] = day.split("-");
-    else if (curdate) [year, month, date] = curdate.split("-");
+    if (form?.date) [year, month, date] = form?.date.split("-");
+    else if (day) [year, month, date] = day.split("-");
     setYeart(year);
     setMontht(month);
     setDatet(date);
-  }, [curdate, day]);
+  }, [day, form]);
 
   return (
     <Make.MakeDetailWrapper>
@@ -39,10 +38,12 @@ const MakeDetail = ({ form, setForm, curdate, day, setMapOpen, mapOpen }) => {
         </Make.YearText>
       </Make.TitleBox>
       <InputDetailTitle
+        form={form}
         onChangeHandle={(e) => {
           setForm((prev) => {
-            prev.title = e.target.value;
-            return prev;
+            const temp = JSON.parse(JSON.stringify(prev));
+            temp.title = e.target.value;
+            return temp;
           });
         }}
       />
@@ -50,8 +51,9 @@ const MakeDetail = ({ form, setForm, curdate, day, setMapOpen, mapOpen }) => {
         form={form}
         onChangeHandle={(value) => {
           setForm((prev) => {
-            prev.color = value;
-            return prev;
+            const temp = JSON.parse(JSON.stringify(prev));
+            temp.color = value;
+            return temp;
           });
         }}
       />
@@ -61,12 +63,14 @@ const MakeDetail = ({ form, setForm, curdate, day, setMapOpen, mapOpen }) => {
         mapOpen={mapOpen}
         setMapOpen={setMapOpen}
       />
-      <InputTime setForm={setForm} />
+      <InputTime form={form} setForm={setForm} />
       <InputMemo
         form={form}
         onChangeHandle={(e) => {
           setForm((prev) => {
-            prev.memo = e.target.value;
+            const temp = JSON.parse(JSON.stringify(prev));
+            temp.memo = e.target.value;
+            return temp;
           });
         }}
       />

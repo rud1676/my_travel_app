@@ -26,8 +26,13 @@ export const myPlanApi = {
     return axiosInstance.post(`/travel/myPlan/detail`, details);
   },
 
-  getDetailById: (id) => {
-    return axiosInstance.get(`/travel/myPlan/detail/${id}`);
+  getDetailById: async (id) => {
+    try {
+      const res = await axiosInstance.get(`/travel/myPlan/detail/${id}`);
+      return res.data;
+    } catch (error) {
+      throw error;
+    }
   },
   deleteMyPlan: async (id) => {
     try {

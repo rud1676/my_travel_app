@@ -14,7 +14,7 @@ import { PlanDetailMakeValid } from "@/util/valid";
 const MakePageFooter = ({
   detail_id,
   travelId,
-  curdate,
+  day,
   mapOpen,
   setMapOpen,
   form,
@@ -36,17 +36,15 @@ const MakePageFooter = ({
         locationName: form.locationName,
         imgsrc: form.photo,
         phoneNumber: form.phone,
-        date: curdate,
+        date: day || form.date,
       };
-      console.log(formData);
 
       if (detail_id) {
         formData.detailId = detail_id; // 수정하기 일시 사용.
-      }
-      if (travelId) {
+      } else if (travelId) {
         formData.travelId = travelId;
       }
-
+      console.log(formData);
       mutate({ data: formData, id: travelId });
     }
   };

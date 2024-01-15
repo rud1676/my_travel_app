@@ -19,7 +19,7 @@ const Header = ({
   const navigator = useRouter();
 
   const onClickBack = () => {
-    navigator.replace("/plan");
+    navigator.replace("/schedule/plan");
   };
 
   return (

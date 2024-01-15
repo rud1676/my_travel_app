@@ -225,6 +225,7 @@ module.exports.addDetail = async (req, res) => {
     phoneNumber
   } = req.body;
   const point = { type: 'Point', coordinates: [location.lat, location.lng] }; // GeoJson format: [lng, lat]
+  console.log(point);
   let result;
   // detailId값을 받았으면 이것은 수정입니다.
   if (detailId) {

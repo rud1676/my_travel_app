@@ -30,9 +30,17 @@ const TimeField = ({ v, setValue, title }) => {
   );
 };
 
-const InputTime = ({ setForm }) => {
+const InputTime = ({ form, setForm }) => {
   const [forminute, setForminute] = useState("");
   const [formHour, setFormHour] = useState("");
+
+  useEffect(() => {
+    if (form.time) {
+      const [t, m, _] = form.time.split(":");
+      setForminute(m);
+      setFormHour(t);
+    }
+  }, [form]);
 
   useEffect(() => {
     setForm((prev) => {
