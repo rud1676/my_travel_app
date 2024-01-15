@@ -1,35 +1,38 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-
+import { myPlanApi } from "@/api/myplan";
 import Plan from "./Plan";
 import PlanMini from "./PlanMini";
 
-const Plans = ({ minView, setDeleteid }) => {
+const Plans = ({ minView, setDeleteid, setModal }) => {
   const { data: plans } = useSuspenseQuery({
     queryKey: ["plan"],
     queryFn: () => myPlanApi.list("asc"),
     enabled: false,
   });
 
+  const onClickDelete = (id) => {
+    setDeleteid(id);
+    setModal(true);
+  };
   return (
     <>
-      {data?.length >= 1 ? (
+      {plans?.length >= 1 ? (
         plans.map((v) =>
           minView ? (
             <PlanMini
-              onClickDeleteButton={onClickDeleteButton}
+              onClickDeleteButton={() => {
+                onClickDelete(v.id);
+              }}
               key={v.id}
-              id={v.id}
               plan={v}
-              setDeleteid={setDeleteid}
             />
           ) : (
             <Plan
-              type={v.id % 2}
-              onClickDeleteButton={onClickDeleteButton}
+              onClickDeleteButton={() => {
+                onClickDelete(v.id);
+              }}
               key={v.id}
-              id={v.id}
               plan={v}
-              setDeleteid={setDeleteid}
             />
           )
         )

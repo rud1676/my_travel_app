@@ -73,7 +73,7 @@ const MyInfoModifyPage = () => {
         handleClose={() => setOpen(false)}
         onClickConfirm={() => {
           setOpen(false);
-          navigator.replace("/myinfo");
+          navigator.replace("/setting/myinfo");
         }}
         title="변경 확인"
         content="변경한 내용이 저장이 되지 않습니다. 정말 나가시겠습니까?"

@@ -168,7 +168,8 @@ const AppStyle = {
   `,
   HeaderWrapper: styled(Box)`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 20px;
     height: 96px;
     align-items: end;
   `,

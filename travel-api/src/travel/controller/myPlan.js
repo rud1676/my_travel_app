@@ -224,9 +224,8 @@ module.exports.addDetail = async (req, res) => {
     imgsrc,
     phoneNumber
   } = req.body;
-  const point = { type: 'Point', coordinates: [location.latitude, location.longitude] }; // GeoJson format: [lng, lat]
+  const point = { type: 'Point', coordinates: [location.lat, location.lng] }; // GeoJson format: [lng, lat]
   let result;
-
   // detailId값을 받았으면 이것은 수정입니다.
   if (detailId) {
     // 만약 지정장소를 건들이지 않았다면 사진 업로드처리, 사진보여주는 이미지를 굳이 새로 생성할 필요가 없습니다.
@@ -300,7 +299,7 @@ module.exports.addDetail = async (req, res) => {
 
     // 이미지 주소가 있다면 구글 이미지 파일을 업로드 해야합니다.
     let attachment;
-    if (imgsrc) {
+    if (imgsrc && imgsrc !== '') {
       // 업로드가 된결과를 반환할거임
       const uploadResult = await uploadImageToS3(imgsrc);
 
@@ -319,9 +318,9 @@ module.exports.addDetail = async (req, res) => {
       locationName,
       date,
       time,
-      googleImgSrc: imgsrc,
+      googleImgSrc: imgsrc !== undefined ? imgsrc : '',
       order: count + 1,
-      imageId: attachment !== null ? attachment.id : null,
+      imageId: attachment !== undefined ? attachment.id : null,
       mainPhoneNumber: phoneNumber
     });
   }

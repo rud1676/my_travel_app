@@ -1,5 +1,33 @@
 import { toast } from "react-hot-toast";
 
+export const PlanDetailMakeValid = (form) => {
+  const [h, m] = form.time.split(":");
+  const hoursRegex = /^(?:[01]?[0-9]|2[0-3])$/;
+  const minutesRegex = /^[0-5]?[0-9]$/;
+  if (!(minutesRegex.test(m) && hoursRegex.test(h))) {
+    toast.error("시간을 정확히 입력해주세요");
+    return false;
+  }
+  console.log(form?.title);
+  if (form?.title === undefined || form.title === "") {
+    toast.error("제목을 입력하세요");
+    return false;
+  }
+  if (form.title !== "" && form.title.length >= 30) {
+    toast.error("제목을 30자 이내로 작성해주세요.");
+    return false;
+  }
+  if (!form.color) {
+    toast.error("컬러를 지정해주세요");
+    return false;
+  }
+  if (!form.location) {
+    toast.error("장소를 지정해주세요");
+    return false;
+  }
+  return true;
+};
+
 export const CheckRangeValid = (range) => {
   if (range?.from === undefined && range?.to === undefined) {
     toast.error("날짜를 지정해주세요.");

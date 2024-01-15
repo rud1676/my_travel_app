@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { Box } from "@mui/material";
 
 import ArrowBackIcon from "@/assets/img/Arrow_Back.svg";
 import ArrowBackWhite from "@/assets/img/ArrowBackWhite.svg";
@@ -25,6 +26,7 @@ const Header = ({ color, title, onClickBack }) => {
       >
         {title}
       </AppStyle.TitleText>
+      <Box></Box>
     </AppStyle.HeaderWrapper>
   );
 };

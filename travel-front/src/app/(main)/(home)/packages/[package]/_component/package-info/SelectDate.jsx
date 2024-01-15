@@ -1,18 +1,18 @@
 "use client";
 
-import PropTypes from "prop-types";
+import Proptypes from "prop-types";
+
 import moment from "moment";
 import Package from "@/app/(main)/(home)/packages/[package]/package.style";
-
 import { Pretendard_Bold } from "@/assets/fonts/fonts";
 
-const ShowDate = ({ range, mode = false }) => {
+const SelectDate = ({ setOpenDate, range }) => {
   return (
-    <Package.ConfirmDateWrapper mode={mode.toString()}>
+    <Package.SelectDateWrapper>
       <Package.SelectDateTextBox>
-        <Package.ConfirmDateKeyText className={Pretendard_Bold.className}>
+        <Package.SelectDateKeyText className={Pretendard_Bold.className}>
           출발 일자
-        </Package.ConfirmDateKeyText>
+        </Package.SelectDateKeyText>
         <Package.SelectDateValueText
           selected={range?.from === undefined}
           className={Pretendard_Bold.className}
@@ -23,9 +23,9 @@ const ShowDate = ({ range, mode = false }) => {
         </Package.SelectDateValueText>
       </Package.SelectDateTextBox>
       <Package.SelectDateTextBox>
-        <Package.ConfirmDateKeyText className={Pretendard_Bold.className}>
+        <Package.SelectDateKeyText className={Pretendard_Bold.className}>
           도착 일자
-        </Package.ConfirmDateKeyText>
+        </Package.SelectDateKeyText>
         <Package.SelectDateValueText
           selected={range?.to === undefined}
           className={Pretendard_Bold.className}
@@ -35,11 +35,21 @@ const ShowDate = ({ range, mode = false }) => {
             : moment(range.to).format("YYYY-MM-DD")}
         </Package.SelectDateValueText>
       </Package.SelectDateTextBox>
-    </Package.ConfirmDateWrapper>
+      <Package.SelectDateButton
+        className={Pretendard_Bold.className}
+        onClick={() => {
+          setOpenDate(true);
+        }}
+      >
+        일자 선택
+      </Package.SelectDateButton>
+    </Package.SelectDateWrapper>
   );
 };
-ShowDate.propTypes = {
-  range: PropTypes.any,
+
+SelectDate.propTypes = {
+  setOpenDate: Proptypes.func.isRequired,
+  range: Proptypes.any,
 };
 
-export default ShowDate;
+export default SelectDate;

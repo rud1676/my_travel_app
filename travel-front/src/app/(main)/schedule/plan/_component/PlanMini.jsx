@@ -1,29 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import {
-  MiniDeleteBox,
-  PlanMiniWrapper,
-  PlanMiniHeader,
-  PlanBox,
-  PlanMiniHeaderText,
-  PlanPicture,
-  PlanMiniDateText,
-} from "../style";
+import Plan from "../plan.style";
 import PlanFolder from "@/assets/img/PlanFolder.svg";
 import DeleteIcon from "@/assets/img/DeleteIcon.svg";
 import { Pretendard_Bold, Pretendard_Medium } from "@/assets/fonts/fonts";
 
-const PlanMiniComponent = ({
-  setDeleteid,
-  id,
-  onClickDeleteButton,
-  type,
-  plan,
-}) => {
+const PlanMiniComponent = ({ onClickDeleteButton, type, plan }) => {
   const navigator = useRouter();
   const [img, setImg] = useState("");
 
@@ -31,9 +17,9 @@ const PlanMiniComponent = ({
   const start = startAt.slice(2).replaceAll("-", "/");
   const end = endAt.slice(2).replaceAll("-", "/");
 
-  const onClickPlan = useCallback(() => {
-    navigator.push(`/plandetail?id=${plan.id}`);
-  }, [navigator, plan]);
+  const onClickPlan = () => {
+    navigator.push(`/schedule/plan/${plan.id}`);
+  };
 
   useEffect(() => {
     for (let i = 0; i < details.length; i += 1) {
@@ -45,28 +31,27 @@ const PlanMiniComponent = ({
   }, [setImg, details]);
 
   return (
-    <PlanBox>
-      <PlanMiniWrapper onClick={onClickPlan} url={PlanFolder.src}>
-        <PlanMiniHeader>
-          <PlanMiniHeaderText className={Pretendard_Bold.className}>
+    <Plan.PlanBox>
+      <Plan.PlanMiniWrapper onClick={onClickPlan} url={PlanFolder.src}>
+        <Plan.PlanMiniHeader>
+          <Plan.PlanMiniHeaderText className={Pretendard_Bold.className}>
             {title}
-          </PlanMiniHeaderText>
-        </PlanMiniHeader>
-        <PlanPicture imgsrc={img} left={-2} top={-37} rot={type ? -5 : 3} />
-        <PlanMiniDateText
+          </Plan.PlanMiniHeaderText>
+        </Plan.PlanMiniHeader>
+        <Plan.PlanPicture
+          imgsrc={img}
+          left={-2}
+          top={-37}
+          rot={type ? -5 : 3}
+        />
+        <Plan.PlanMiniDateText
           className={Pretendard_Medium.className}
-        >{`${start} ~ ${end}`}</PlanMiniDateText>
-      </PlanMiniWrapper>
-      <MiniDeleteBox
-        onClick={() => {
-          onClickDeleteButton();
-          setDeleteid(id);
-        }}
-        url={DeleteIcon.src}
-      >
+        >{`${start} ~ ${end}`}</Plan.PlanMiniDateText>
+      </Plan.PlanMiniWrapper>
+      <Plan.MiniDeleteBox onClick={onClickDeleteButton} url={DeleteIcon.src}>
         <Image src={DeleteIcon.src} width={24} height={24} alt="삭제아이콘" />
-      </MiniDeleteBox>
-    </PlanBox>
+      </Plan.MiniDeleteBox>
+    </Plan.PlanBox>
   );
 };
 

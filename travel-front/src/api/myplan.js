@@ -13,8 +13,13 @@ export const myPlanApi = {
       throw error;
     }
   },
-  getPlanById: (id) => {
-    return axiosInstance.get(`/travel/myPlan/${id}`);
+  getPlanById: async (id) => {
+    try {
+      const res = await axiosInstance.get(`/travel/myPlan/${id}`);
+      return res.data; // 데이터를 반환하도록 수정
+    } catch (error) {
+      throw error;
+    }
   },
 
   orderingDetails: (details) => {
@@ -24,8 +29,13 @@ export const myPlanApi = {
   getDetailById: (id) => {
     return axiosInstance.get(`/travel/myPlan/detail/${id}`);
   },
-  deleteMyPlan: (id) => {
-    return axiosInstance.delete(`/travel/myPlan/${id}`);
+  deleteMyPlan: async (id) => {
+    try {
+      const res = await axiosInstance.delete(`/travel/myPlan/${id}`);
+      return res.data;
+    } catch (error) {
+      throw error;
+    }
   },
   deleteMyPlanDetail: (id) => {
     return axiosInstance.delete(`/travel/myPlan/detail/${id}`);
@@ -57,7 +67,12 @@ export const myPlanApi = {
       throw error;
     }
   },
-  createPlanDetail: (data, id) => {
-    return axiosInstance.post(`travel/myPlan/${id}/detail`, data);
+  createPlanDetail: async (data, id) => {
+    try {
+      const res = await axiosInstance.post(`travel/myPlan/${id}/detail`, data);
+      return res.data;
+    } catch (error) {
+      throw error;
+    }
   },
 };

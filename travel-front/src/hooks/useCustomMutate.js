@@ -13,7 +13,7 @@ const useCustomMutate = (mutationFn, SuccessMessage, SuccessRoute) => {
     onSuccess: (data, _variables, _context) => {
       toast.dismiss();
       toast.success(SuccessMessage);
-      navigator.replace(SuccessRoute(data));
+      if (SuccessRoute(data)) navigator.replace(SuccessRoute(data));
     },
     onError: (error, _variables, _context) => {
       toast.dismiss();

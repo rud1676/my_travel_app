@@ -37,14 +37,14 @@ const MakePlan = () => {
   const Createmutate = useCustomMutate(
     (formData) => myPlanApi.createMyPlan(formData),
     `여행 일정을 생성했습니다. 세부 일정 페이지로 이동합니다.`,
-    (data) => `/plandetail?id=${data.id}`
+    (data) => `/schedule/plan/${data.id}`
   );
 
   // 여행계획 수정
   const Modifymutate = useCustomMutate(
     (formData) => myPlanApi.modifyMyPlan(formData, id),
     `여행 일정을 수정했습니다.`,
-    (data) => `/plandetail?id=${data.id}`
+    (data) => `/schedule/plan/${data.id}`
   );
 
   const onClickBottom = () => {
@@ -100,7 +100,9 @@ const MakePlan = () => {
       />
       <Footer
         bgcolor="#00CE9D"
-        child={<Image src={CheckIcon.src} width={63} height={46} />}
+        child={
+          <Image src={CheckIcon.src} alt="체크버튼" width={63} height={46} />
+        }
         onClick={onClickBottom}
       />
     </>

@@ -1,41 +1,35 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
+
+import PlanStyle from "./plan.style";
 
 import Header from "@/app/_component/Header";
 import ConfirmModal from "@/app/_component/ConfirmModal";
 import Plans from "./_component/Plans";
-import SotringViewLayer from "./_component/SotringViewLayer";
-
+import SotringViewLayer from "./_component/SotringLayer";
+import useCustomMutate from "@/hooks/useCustomMutate";
 import { myPlanApi } from "@/api/myplan";
 
 const Plan = () => {
   const navigator = useRouter();
-  const [myPlans, setMyPlans] = useState(undefined);
+  const queryClient = useQueryClient();
+
   const [minView, setMinView] = useState(false);
   const [modal, setModal] = useState(false);
   const [Deleteid, setDeleteid] = useState(0);
 
-  const SetMyPlans = (id) => {
-    setMyPlans((prev) => {
-      const temp = prev.filter((v) => v.id !== id);
-      return [...temp];
-    });
-  };
+  const mutate = useCustomMutate(
+    ({ id }) => myPlanApi.deleteMyPlan(id),
+    "삭제 하였습니다.",
+    () => {
+      queryClient.refetchQueries({ queryKey: ["plan"], type: "active" });
+      return;
+    }
+  );
 
-  const onClickDeleteButton = (planId) => {
-    const DeleteMyPlan = async (id) => {
-      await myPlanApi.deleteMyPlan(id);
-      SetMyPlans(id);
-    };
-
-    DeleteMyPlan(planId);
-  };
-
-  const onClickSort = (sort) => {};
-
-  if (!myPlans) return null;
   return (
     <>
       <Header
@@ -44,26 +38,25 @@ const Plan = () => {
           navigator.push("/schedule");
         }}
       />
-      <SotringViewLayer
-        onClickSort={onClickSort}
-        setMinView={setMinView}
-        minView={minView}
-      />
-      <Plans
-        onClickDeleteButton={() => {
-          setModal(true);
-        }}
-        minView={minView}
-        myPlans={myPlans}
-        setDeleteid={setDeleteid}
-      />
+      <SotringViewLayer setMinView={setMinView} minView={minView} />
+      <PlanStyle.MainWrapper>
+        <Plans
+          setModal={setModal}
+          minView={minView}
+          setDeleteid={setDeleteid}
+        />
+      </PlanStyle.MainWrapper>
       <ConfirmModal
+        title="내 여행 삭제"
+        content="정말로 삭제 하시겠습니까?"
         open={modal}
+        calcelText="취소"
         handleClose={() => setModal(false)}
         onClickConfirm={() => {
-          onClickDeleteButton(Deleteid);
+          mutate({ id: Deleteid });
           setModal(false);
         }}
+        confirmText="삭제"
       />
     </>
   );
