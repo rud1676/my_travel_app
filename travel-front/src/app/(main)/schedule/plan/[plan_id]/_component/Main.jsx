@@ -42,7 +42,10 @@ const Main = ({
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="droppable">
           {(provide) => (
-            <MainWrapper ref={provide.innerRef} {...provide.droppableProps}>
+            <PlanDetail.MainWrapper
+              ref={provide.innerRef}
+              {...provide.droppableProps}
+            >
               {details.map((v, i) => (
                 <Draggable key={v.id} draggableId={v.id.toString()} index={i}>
                   {(provided, snapshot) => (
@@ -56,19 +59,21 @@ const Main = ({
                       }}
                     >
                       <SchduleComponent
+                        plan_id={plan_id}
                         isSetting={isSetting}
                         onClickDelete={onClickDelete}
                         FormDataInitValue={FormDataInitValue}
                         detail={v}
                         setDelId={setDelId}
                         index={i + 1}
+                        key={v.id}
                       />
                     </div>
                   )}
                 </Draggable>
               ))}
               {provide.placeholder}
-            </MainWrapper>
+            </PlanDetail.MainWrapper>
           )}
         </Droppable>
       </DragDropContext>

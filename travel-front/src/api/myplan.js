@@ -42,8 +42,13 @@ export const myPlanApi = {
       throw error;
     }
   },
-  deleteMyPlanDetail: (id) => {
-    return axiosInstance.delete(`/travel/myPlan/detail/${id}`);
+  deleteMyPlanDetail: async (id) => {
+    try {
+      const res = await axiosInstance.delete(`/travel/myPlan/detail/${id}`);
+      return res.data;
+    } catch (error) {
+      throw error;
+    }
   },
   getDetailByIdAndDay: (id, day) => {
     return axiosInstance.get(`/travel/myPlan/${id}/detail?date=${day}`);

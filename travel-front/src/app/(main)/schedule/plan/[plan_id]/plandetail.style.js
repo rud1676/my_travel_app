@@ -45,6 +45,50 @@ const PlanDetail = {
     align-items: center;
     z-index: 1;
   `,
+  ButtonTitle: styled(Typography)`
+    color: #4987f7;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+  `,
+  ButtonWrapper: styled(Box)`
+    cursor: pointer;
+    border-radius: ${(props) => props.rad};
+    background: #efefef;
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1px;
+    flex-shrink: 0;
+  `,
+  DrawFooterWrapper: styled(SwipeableDrawer)`
+    .MuiDrawer-paperAnchorBottom {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  `,
+  CloseButtonWrapper: styled(Box)`
+    cursor: pointer;
+    margin-top: 14px;
+    cursor: pointer;
+    border-radius: 9px;
+    background: #efefef;
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  `,
+  DrawerOuterWrapper: styled(Box)`
+    display: flex;
+    justify-content: center;
+  `,
+  DrawerInnerWrapper: styled(Box)`
+    min-width: 320px;
+    max-width: 820px;
+    width: 100%;
+  `,
 };
 
 export const FooterWrapper = styled(Box)`
@@ -119,45 +163,6 @@ export const DateWrapper = styled.div`
   color: #fff;
   font-size: 16px;
   line-height: normal;
-`;
-
-export const ButtonTitle = styled(Typography)`
-  color: #4987f7;
-
-  font-size: 20px;
-  font-style: normal;
-  line-height: normal;
-`;
-
-export const ButtonWrapper = styled(Box)`
-  cursor: pointer;
-  border-radius: ${(props) => props.rad};
-  background: #efefef;
-  height: 59px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1px;
-  flex-shrink: 0;
-`;
-
-export const CloseButtonWrapper = styled(Box)`
-  margin-top: 14px;
-  cursor: pointer;
-  border-radius: 9px;
-  background: #efefef;
-  height: 59px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-`;
-
-export const DrawFooterWrapper = styled(SwipeableDrawer)`
-  .MuiDrawer-paperAnchorBottom {
-    background-color: transparent;
-    box-shadow: none;
-  }
 `;
 
 export default PlanDetail;

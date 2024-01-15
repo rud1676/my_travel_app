@@ -10,7 +10,7 @@ import FooterDrawer from "./_component/FooterDrawer";
 
 import { myPlanApi } from "@/api/myplan";
 import { useSuspenseQuery } from "@tanstack/react-query";
-
+import useCustomMutate from "@/hooks/useCustomMutate";
 const PlanDetail = ({ params }) => {
   const plan_id = parseInt(params.plan_id);
 
@@ -30,11 +30,14 @@ const PlanDetail = ({ params }) => {
     refetchOnMount: "always",
   });
 
+  const mutate = useCustomMutate(
+    ({ id }) => myPlanApi.deleteMyPlanDetail(id),
+    "세부여행계획이 삭제되었습니다.",
+    (_data) => `/`
+  );
+
   const onClickDeleteButton = (planId) => {
-    const DeleteMyPlan = async (id) => {
-      await myPlanApi.deleteMyPlanDetail(id);
-    };
-    DeleteMyPlan(planId);
+    mutate(planId);
   };
 
   const ChnageDetials = (plans, curD) => {

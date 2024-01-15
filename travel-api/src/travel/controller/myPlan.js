@@ -248,7 +248,7 @@ module.exports.addDetail = async (req, res) => {
           locationName,
           date,
           time,
-          mainPhoneNumber: phoneNumber
+          mainPhoneNumber: phoneNumber || ''
         },
         {
           where: {
@@ -283,7 +283,7 @@ module.exports.addDetail = async (req, res) => {
           time,
           googleImgSrc: imgsrc,
           imageId: attachment !== null ? attachment.id : null,
-          mainPhoneNumber: phoneNumber
+          mainPhoneNumber: phoneNumber || ''
         },
         {
           where: {
@@ -322,7 +322,7 @@ module.exports.addDetail = async (req, res) => {
       googleImgSrc: imgsrc !== undefined ? imgsrc : '',
       order: count + 1,
       imageId: attachment !== undefined ? attachment.id : null,
-      mainPhoneNumber: phoneNumber
+      mainPhoneNumber: phoneNumber || ''
     });
   }
 
@@ -356,7 +356,9 @@ module.exports.update = async (req, res) => {
   }
   const result = await models.MyPlan.update(
     {
+      id,
       title,
+
       startAt,
       endAt
     },
@@ -366,7 +368,6 @@ module.exports.update = async (req, res) => {
       }
     }
   );
-
   res.send(result);
 };
 
