@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Global, css } from "@emotion/react";
 
 import Login from "@/app/(page)/login/login.style";
-import Header from "@/app/_component/Header";
+import Header from "@/app/_component/common/Header";
 import LoginLogo from "@/assets/img/LoginLogo.svg";
 import SinesText from "@/assets/img/SinesTourText.svg";
 import NaverLoginIcon from "@/assets/img/NaverLogin.svg";

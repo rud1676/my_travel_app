@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Header from "@/app/_component/Header";
-import Footer from "@/app/_component/Footer";
+import Header from "@/app/_component/common/Header";
+import Footer from "@/app/_component/common/Footer";
 import Modal from "@/app/_component/ConfirmModal";
 import MyInfoSuspens from "./_component/MyInfoSuspens";
 
@@ -21,7 +21,7 @@ const MyInfoModifyPage = () => {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({});
 
-  const { user } = useUser();
+  const { user, isLoading } = useUser();
 
   const mutate = useCustomMutate(
     ({ formData, id }) => globalApi.profilePut(formData, id),
@@ -51,7 +51,7 @@ const MyInfoModifyPage = () => {
       mutate({ formData, id });
     }
   };
-
+  if (isLoading) return null;
   return (
     <>
       <Header
@@ -60,7 +60,7 @@ const MyInfoModifyPage = () => {
         }}
         title="회원 정보 수정"
       />
-      {user && <MyInfoSuspens setForm={setForm} id={user.id} />}
+      <MyInfoSuspens setForm={setForm} id={user.id} />
       <Footer
         onClick={() => {
           onClickModify(form, user.id);

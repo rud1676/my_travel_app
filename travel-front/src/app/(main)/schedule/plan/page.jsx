@@ -6,7 +6,7 @@ import { useQueryClient } from "@tanstack/react-query";
 
 import PlanStyle from "./plan.style";
 
-import Header from "@/app/_component/Header";
+import Header from "@/app/_component/common/Header";
 import ConfirmModal from "@/app/_component/ConfirmModal";
 import Plans from "./_component/Plans";
 import SotringViewLayer from "./_component/SotringLayer";

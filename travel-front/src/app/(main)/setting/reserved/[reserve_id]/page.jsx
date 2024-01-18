@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Header from "@/app/_component/Header";
+import Header from "@/app/_component/common/Header";
 import Reserved from "../reserved.style";
 import ReserveConfirm from "@/app/_component/ReserveConfirm";
 import ArrowFront from "@/assets/img/ArrowFront.svg";

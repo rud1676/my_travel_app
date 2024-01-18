@@ -8,8 +8,6 @@ const MyInfo = {
   `,
   InfoBox: styled(Box)`
     display: flex;
-    padding-left: 10px;
-    margin-bottom: 18px;
   `,
   TitleBox: styled.p`
     color: #7c7c7c;

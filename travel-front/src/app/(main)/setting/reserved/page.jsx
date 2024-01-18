@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Header from "@/app/_component/Header";
+import Header from "@/app/_component/common/Header";
 import ReservedTravels from "./_component/ReservedTravels";
 import Reserved from "./reserved.style";
 

@@ -1,10 +1,3 @@
-/* eslint-disable @next/next/no-sync-scripts */
-
-import { Inter } from "next/font/google";
-import PropTypes from "prop-types";
-
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata = {
   title: "씨네스투어",
   description: "씨네스투어",
@@ -26,16 +19,12 @@ const RootLayout = ({ children }) => {
         />
       </head>
 
-      <body className={inter.className}>
+      <body>
         <div id="naver_id_login" style={{ display: "none" }} />
         <div>{children}</div>
       </body>
     </html>
   );
-};
-
-RootLayout.propTypes = {
-  children: PropTypes.element.isRequired,
 };
 
 export default RootLayout;

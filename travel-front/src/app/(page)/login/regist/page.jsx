@@ -1,36 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "react-hot-toast";
 import Image from "next/image";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControl from "@mui/material/FormControl";
-import { useSetRecoilState } from "recoil";
-import { useSearchParams } from "next/navigation";
+import { RadioGroup, FormControl } from "@mui/material";
+import { useSearchParams, useRouter } from "next/navigation";
+
+import Header from "@/app/_component/common/Header";
+import ProfileImage from "@/app/_component/ProfileImage";
+import Footer from "@/app/_component/common/Footer";
+
+import Profile from "@/app/(main)/setting/setting.style";
+import Modify from "@/app/(main)/setting/myinfo/modify/modify.style";
 
 import CheckIconWhite from "@/assets/img/CheckIconWhite.svg";
-import { showFooter } from "@/Atom";
-import CommonHeader from "@/component/common/CommonHeader";
-import ProfileImage from "@/component/common/ProfileImage";
 
-import {
-  MyInfoWrapper,
-  InputWrapper,
-  ProfileInput,
-  ProfileInputWrapper,
-  ProfileInputText,
-  BirthBox,
-  BirthText,
-  YearInput,
-  MonthInput,
-  DayInput,
-  GenderBox,
-  GenderRadio,
-  MyInfoFooterWrapper,
-  GenderFormControlLabel,
-} from "@/app/(main)/setting/setting.style";
-
-import { Pretendard_SemiBold, Pretendard_Bold } from "@/assets/fonts/fonts";
+import { Pretendard_SemiBold } from "@/assets/fonts/fonts";
 import { globalApi, setToken } from "@/api/global";
 import { LocalSave } from "@/LocalSave";
 
@@ -38,19 +23,19 @@ const RowRadioButtonsGroup = ({ gender, onChange }) => {
   return (
     <FormControl onChange={onChange} sx={{ display: "flex" }}>
       <RadioGroup defaultValue={gender} row name="row-radio-buttons-group">
-        <GenderFormControlLabel
+        <Profile.GenderFormControlLabel
           value={0}
-          control={<GenderRadio />}
+          control={<Profile.GenderRadio />}
           label="남자"
         />
-        <GenderFormControlLabel
+        <Profile.GenderFormControlLabel
           value={1}
-          control={<GenderRadio />}
+          control={<Profile.GenderRadio />}
           label="여자"
         />
-        <GenderFormControlLabel
+        <Profile.GenderFormControlLabel
           value={2}
-          control={<GenderRadio />}
+          control={<Profile.GenderRadio />}
           label="선택안함"
         />
       </RadioGroup>
@@ -59,7 +44,7 @@ const RowRadioButtonsGroup = ({ gender, onChange }) => {
 };
 
 const Regist = () => {
-  const setShowFooter = useSetRecoilState(showFooter);
+  const navigator = useRouter();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -127,77 +112,79 @@ const Regist = () => {
     setFile(e.target.files[0]);
     reader.readAsDataURL(e.target.files[0]);
   };
-  useEffect(() => {
-    setShowFooter(false);
-  }, [setShowFooter]);
+
   return (
     <>
-      <CommonHeader route="login" title="회원 정보 입력" color="black" />
+      <Header
+        onClickBack={() => {
+          navigator.push("/login");
+        }}
+        title="회원 정보 입력"
+        color="black"
+      />
 
-      <MyInfoWrapper>
+      <Modify.MyInfoWrapper>
         <ProfileImage
           onFileChange={onFileChange}
           fileInput={fileInput}
           thumnail={thumnail}
         />
-        <InputWrapper>
-          <ProfileInputWrapper marb="25px">
-            <ProfileInputText className={Pretendard_SemiBold.className}>
+        <Profile.InputWrapper>
+          <Profile.ProfileInputWrapper marb="25px">
+            <Profile.ProfileInputText className={Pretendard_SemiBold.className}>
               이름
-            </ProfileInputText>
-            <ProfileInput
+            </Profile.ProfileInputText>
+            <Profile.ProfileInput
               placeholder="이름"
               onChange={(e) => {
                 setName(e.target.value);
               }}
               className={Pretendard_SemiBold.className}
             />
-          </ProfileInputWrapper>
-          <ProfileInputWrapper>
-            <ProfileInputText className={Pretendard_SemiBold.className}>
+          </Profile.ProfileInputWrapper>
+          <Profile.ProfileInputWrapper>
+            <Profile.ProfileInputText className={Pretendard_SemiBold.className}>
               전화번호
-            </ProfileInputText>
-            <ProfileInput
+            </Profile.ProfileInputText>
+            <Profile.ProfileInput
               onChange={(e) => {
                 setPhone(e.target.value);
               }}
               placeholder="'-'를 빼고 입력하세요"
               className={Pretendard_SemiBold.className}
             />
-          </ProfileInputWrapper>
-          <ProfileInputWrapper marb="32px">
-            <ProfileInputText className={Pretendard_SemiBold.className}>
+          </Profile.ProfileInputWrapper>
+          <Profile.ProfileInputWrapper marb="32px">
+            <Profile.ProfileInputText className={Pretendard_SemiBold.className}>
               이메일
-            </ProfileInputText>
-            <ProfileInput
+            </Profile.ProfileInputText>
+            <Profile.ProfileInput
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
               placeholder="이메일"
               className={Pretendard_SemiBold.className}
             />
-          </ProfileInputWrapper>
-          <BirthBox>
-            <BirthText className={Pretendard_SemiBold.className}>
+          </Profile.ProfileInputWrapper>
+          <Profile.BirthBox>
+            <Profile.BirthText className={Pretendard_SemiBold.className}>
               생년월일
-            </BirthText>
-            <YearInput
+            </Profile.BirthText>
+            <Profile.YearInput
               maxLength={4}
               type="number"
               value={year}
               onChange={(e) => {
                 let { value } = e.target;
-
                 if (value > 2023) {
                   value = 2023;
                 }
-
                 setYear(value);
               }}
               placeholder="년"
               className={Pretendard_SemiBold.className}
             />
-            <MonthInput
+            <Profile.MonthInput
               maxLength={2}
               value={month}
               type="number"
@@ -211,7 +198,7 @@ const Regist = () => {
               placeholder="월"
               className={Pretendard_SemiBold.className}
             />
-            <DayInput
+            <Profile.DayInput
               onChange={(e) => {
                 let { value } = e.target;
                 if (value > 31) {
@@ -225,30 +212,29 @@ const Regist = () => {
               placeholder="일"
               className={Pretendard_SemiBold.className}
             />
-          </BirthBox>
-          <GenderBox>
-            <BirthText className={Pretendard_SemiBold.className}>
+          </Profile.BirthBox>
+          <Profile.GenderBox>
+            <Profile.BirthText className={Pretendard_SemiBold.className}>
               성별
-            </BirthText>
+            </Profile.BirthText>
             <RowRadioButtonsGroup
               onChange={(e) => setGender(e.target.value)}
               gender={0}
             />
-          </GenderBox>
-        </InputWrapper>
-      </MyInfoWrapper>
-      <MyInfoFooterWrapper
-        bgcolor="#00CE9D"
-        className={Pretendard_Bold.className}
+          </Profile.GenderBox>
+        </Profile.InputWrapper>
+      </Modify.MyInfoWrapper>
+      <Footer
         onClick={onClickRegist}
-      >
-        <Image
-          width={59}
-          height={42}
-          src={CheckIconWhite.src}
-          alt="체크아이콘"
-        />
-      </MyInfoFooterWrapper>
+        child={
+          <Image
+            width={59}
+            height={42}
+            src={CheckIconWhite.src}
+            alt="체크아이콘"
+          />
+        }
+      />
     </>
   );
 };

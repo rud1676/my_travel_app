@@ -3,8 +3,8 @@ import { useRouter } from "next/navigation";
 import ProfileImage from "@/app/_component/ProfileImage";
 import MyInfo from "./myinfo.style";
 
-import Header from "@/app/_component/Header";
-import Footer from "@/app/_component/Footer";
+import Header from "@/app/_component/common/Header";
+import Footer from "@/app/_component/common/Footer";
 import useUser from "@/hooks/useUser";
 import { genderText } from "@/util/data";
 import { Pretendard_Regular } from "@/assets/fonts/fonts";

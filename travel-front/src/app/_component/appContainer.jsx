@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { Toaster } from "react-hot-toast";
-import PropTypes from "prop-types";
 import AppStyle from "../app.style";
 
 let theme = createTheme({
@@ -36,7 +35,6 @@ theme = createTheme(theme, {
 });
 theme = createTheme({
   components: {
-    // Name of the component
     MuiButton: {
       styleOverrides: {
         // Name of the slot
@@ -74,10 +72,6 @@ const AppContainer = ({ children }) => {
       </CssBaseline>
     </ThemeProvider>
   );
-};
-
-AppContainer.propTypes = {
-  children: PropTypes.element.isRequired,
 };
 
 export default AppContainer;

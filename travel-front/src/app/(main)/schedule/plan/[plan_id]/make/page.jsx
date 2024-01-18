@@ -4,7 +4,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
-import Header from "@/app/_component/Header";
+import Header from "@/app/_component/common/Header";
 import MakePageFooter from "./_component/MakePageFooter";
 import MakeDetail from "./_component/MakeDetail";
 import { myPlanApi } from "@/api/myplan";

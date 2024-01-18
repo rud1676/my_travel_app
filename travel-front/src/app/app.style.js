@@ -153,26 +153,6 @@ const AppStyle = {
     max-width: 820px;
     margin: auto;
   `,
-  TitleText: styled(Typography)`
-    ${(props) => props.tcolor === "white" && "color:#fff;"}
-    width: 75%;
-    text-align: center;
-    font-size: 24px;
-    font-style: normal;
-    line-height: normal;
-  `,
-  HeaderButton: styled.button`
-    all: unset;
-    cursor: pointer;
-    text-align: center;
-  `,
-  HeaderWrapper: styled(Box)`
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    height: 96px;
-    align-items: end;
-  `,
 
   ContentWrapper: styled(Box)`
     margin-top: 19px;

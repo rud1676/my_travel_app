@@ -6,8 +6,8 @@ import { toast } from "react-hot-toast";
 import moment from "moment";
 import Image from "next/image";
 
-import Header from "@/app/_component/Header";
-import Footer from "@/app/_component/Footer";
+import Header from "@/app/_component/common/Header";
+import Footer from "@/app/_component/common/Footer";
 import Main from "./_component/Main";
 import CheckIcon from "@/assets/img/CheckIconWhite.svg";
 
