@@ -19,9 +19,7 @@ const KaKaoLogin = () => {
           LocalSave.setToken(data.token);
           window.location.href = "/";
         } else {
-          router.replace(
-            `/login/regist?provider=${data.provider}&snsId=${data.id}`
-          );
+          router.replace(`/regist?provider=${data.provider}&snsId=${data.id}`);
         }
       } catch (err) {
         window.location.href = "/";

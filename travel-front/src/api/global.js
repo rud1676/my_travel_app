@@ -7,12 +7,17 @@ export const globalApi = {
   kakaoLogin: (info) => {
     return axiosInstance.post("/login/kakao", info);
   },
-  snsJoin: (info) => {
-    return axiosInstance.post("/join/sns", info, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+  snsJoin: async (info) => {
+    try {
+      const res = await axiosInstance.post("/join/sns", info, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      return res.data; // 데이터를 반환하도록 수정
+    } catch (error) {
+      throw error;
+    }
   },
   profile: () => {
     return axiosInstance.get("/profile");
@@ -27,7 +32,6 @@ export const globalApi = {
     return axiosInstance.get(`/users/${id}`);
   },
   profilePut: async (formData, id) => {
-    console.log(formData, id);
     try {
       const res = await axiosInstance.put(`/users/${id}`, formData, {
         headers: {
