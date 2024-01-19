@@ -7,7 +7,7 @@ const Packages = () => {
   const { data } = useSuspenseQuery({
     queryKey: ["packages"],
     queryFn: () => travelPackageApi.list("", "createdAt"),
-    enabled: false,
+    enabled: true,
   });
 
   return (

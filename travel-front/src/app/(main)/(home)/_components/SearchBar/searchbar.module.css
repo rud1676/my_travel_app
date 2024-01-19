@@ -1,0 +1,56 @@
+.recentKeywordWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 9px;
+}
+
+.recentKeywordText {
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.recentKeywordCloseButton {
+  border: none;
+  width: 20px;
+  height: 20px;
+}
+
+.searchingBoxWrapper {
+  padding-left: 25px;
+  margin-top: 27px;
+}
+
+.popPularKeyTitle {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 21px;
+}
+
+.popPularKeywordBox {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.recentSearchWrapper {
+  margin-top: 24px;
+}
+.recentSearchTitle {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 21px;
+}
+.popPularKeyword {
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

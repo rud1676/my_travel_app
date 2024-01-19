@@ -64,13 +64,28 @@ export const travelPackageApi = {
 };
 
 export const travelSearchApi = {
-  getRecentSearch: () => {
-    return axiosInstance.get(`travel/search/recent`);
+  getRecentSearch: async () => {
+    try {
+      const res = await axiosInstance.get(`travel/search/recent`);
+      return res.data;
+    } catch (error) {
+      throw error;
+    }
   },
-  getPopularSearch: () => {
-    return axiosInstance.get(`travel/search/popular`);
+  getPopularSearch: async () => {
+    try {
+      const res = await axiosInstance.get(`travel/search/popular`);
+      return res.data;
+    } catch (error) {
+      throw error;
+    }
   },
-  deleteRecentSearch: (id) => {
-    return axiosInstance.delete(`travel/search/recent/${id}`);
+  deleteRecentSearch: async (id) => {
+    try {
+      const res = await axiosInstance.delete(`travel/search/recent/${id}`);
+      return res.data;
+    } catch (error) {
+      throw error;
+    }
   },
 };

@@ -1,0 +1,24 @@
+.sortingLayerWrapper {
+  height: 42px;
+  justify-content: center;
+  gap: 10px;
+  display: flex;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: Pretendard;
+  font-weight: 400;
+}
+
+.sortingButton {
+  all: unset;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  width: 82px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  white-space: nowrap;
+  font-family: Pretendard;
+  font-weight: 700;
+}

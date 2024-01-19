@@ -1,11 +1,15 @@
 "use client";
 import { CircularProgress } from "@mui/material";
-import MainStyle from "./main.style";
+import Suspense from "../_component/ui/Suspense";
+
 const Loading = () => {
   return (
-    <MainStyle.LoadingBox>
-      <CircularProgress isindeterminate={true.toString()} color="primary" />
-    </MainStyle.LoadingBox>
+    <Suspense
+      title={
+        <CircularProgress isindeterminate={true.toString()} color="primary" />
+      }
+      color="primary"
+    />
   );
 };
 

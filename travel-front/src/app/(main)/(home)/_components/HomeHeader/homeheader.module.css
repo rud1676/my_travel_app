@@ -1,0 +1,52 @@
+.headerBox {
+  padding: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerTitle {
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  font-family: Pretendard;
+  font-weight: 400;
+}
+.headerSearchIconBox {
+  box-shadow: none !important;
+  border-radius: 99px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background: #e2e2e2 !important;
+  color: #646464 !important;
+  padding: 0px !important;
+}
+.searchIconSVG {
+  font-size: 30px;
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.searchingInput {
+  width: 90%;
+  padding-left: 10px;
+}
+
+.searchingWrapper {
+  text-align: center;
+  width: 100%;
+  border-radius: 99px;
+  background: #e2e2e2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerBackButton {
+  all: unset;
+  cursor: pointer;
+  text-align: center;
+  margin-right: 16px;
+  margin-left: 24px;
+}

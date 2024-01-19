@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
+import { Box } from "@mui/material";
 
-import HomeStyle from "@/app/(main)/(home)/home.style";
-import { Pretendard_Bold } from "@/assets/fonts/fonts";
+import styles from "./sortbar.module.css";
 import Filter_Active from "@/assets/img/Filter_Active.svg";
 import Filter from "@/assets/img/Filter.svg";
 import { travelPackageApi } from "@/api/travel";
@@ -35,19 +35,24 @@ const SortingLayer = () => {
   };
 
   return (
-    <HomeStyle.SortingLayerWrapper className={Pretendard_Bold.className}>
+    <Box className={styles.sortingLayerWrapper}>
       {sortWord.map((v, i) => (
-        <HomeStyle.SortingButton
+        <button
+          className={styles.sortingButton}
+          style={{
+            backgroundImage: `url("${
+              activeNum === i ? Filter_Active.src : Filter.src
+            }")`,
+          }}
           key={v}
           onClick={() => {
             onClickSorting(i);
           }}
-          url={activeNum === i ? Filter_Active.src : Filter.src}
         >
           {v}
-        </HomeStyle.SortingButton>
+        </button>
       ))}
-    </HomeStyle.SortingLayerWrapper>
+    </Box>
   );
 };
 export default SortingLayer;

@@ -29,12 +29,5 @@ const MainStyle = {
     position: fixed;
     bottom: 0px;
   `,
-  LoadingBox: styled(Box)`
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `,
 };
 export default MainStyle;

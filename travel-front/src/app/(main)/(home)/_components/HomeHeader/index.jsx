@@ -3,11 +3,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useQueryClient } from "@tanstack/react-query";
-import SotringLayer from "@/app/(main)/(home)/_components/SotringLayer";
 
-import HomeStyle from "@/app/(main)/(home)/home.style";
+import { Box, Input, Typography, Button } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 import ArrowBack from "@/assets/img/Arrow_Back.svg";
-import { Pretendard_Regular } from "@/assets/fonts/fonts";
+import styles from "./homeheader.module.css";
+
+import SortBar from "@/app/(main)/(home)/_components/SortBar";
 
 import { travelPackageApi } from "@/api/travel";
 
@@ -46,50 +48,58 @@ const HomeHeader = ({ setShow }) => {
   const onClickBack = async () => {
     // 화면전환 - 다시 패키지들 불러옴
     SwitchScreen(false);
-
     await queryClient.fetchQuery({
       queryKey: ["packages"],
-      suspense: true,
+      queryFn: () => {
+        return travelPackageApi.list();
+      },
+      suspense: false,
     });
   };
 
   if (search) {
     return (
-      <HomeStyle.HeaderBox>
-        <HomeStyle.HeaderBackButton onClick={onClickBack}>
+      <Box className={styles.headerBox}>
+        <button className={styles.headerBackButton} onClick={onClickBack}>
           <Image width={17} height={29} src={ArrowBack.src} alt="" />
-        </HomeStyle.HeaderBackButton>
-        <HomeStyle.SearchingWrapper onSubmit={onSearchSubmit}>
-          <HomeStyle.SearchingInput
+        </button>
+        <form className={styles.searchingWrapper} onSubmit={onSearchSubmit}>
+          <Input
+            className={styles.searchingInput}
             disableUnderline
             onChange={textHandle}
             value={text}
           />
-          <HomeStyle.HeaderSearchIconBox type="submit" variant="contained">
-            <HomeStyle.SearchIconSVG />
-          </HomeStyle.HeaderSearchIconBox>
-        </HomeStyle.SearchingWrapper>
-      </HomeStyle.HeaderBox>
+          <Button
+            className={styles.headerSearchIconBox}
+            type="submit"
+            variant="contained"
+          >
+            <SearchIcon className={styles.searchIconSVG} />
+          </Button>
+        </form>
+      </Box>
     );
   }
 
   return (
     <>
-      <HomeStyle.HeaderBox>
-        <HomeStyle.HeaderTitle className={Pretendard_Regular.className}>
+      <Box className={styles.headerBox}>
+        <Typography className={styles.headerTitle}>
           어떤 여행을 원하시나요?
-        </HomeStyle.HeaderTitle>
-        <HomeStyle.HeaderSearchIconBox
+        </Typography>
+        <Button
+          className={styles.headerSearchIconBox}
           onClick={() => {
             if (!search) onClickSearch();
           }}
           variant="contained"
         >
-          <HomeStyle.SearchIconSVG />
-        </HomeStyle.HeaderSearchIconBox>
-      </HomeStyle.HeaderBox>
+          <SearchIcon className={styles.searchIconSVG} />
+        </Button>
+      </Box>
 
-      <SotringLayer />
+      <SortBar />
     </>
   );
 };
