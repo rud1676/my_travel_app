@@ -1,0 +1,22 @@
+.infoBox {
+  display: flex;
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+.titleBox {
+  color: #7c7c7c;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  text-align: left;
+  width: 56px;
+  margin-right: 40px;
+  font-family: Pretendard;
+  font-weight: 300;
+}
+.contentBox {
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+}

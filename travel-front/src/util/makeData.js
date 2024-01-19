@@ -6,18 +6,8 @@ export const MakeFileReader = (setState) => {
   return reader;
 };
 
-export const MakeFormData = ({
-  name,
-  phone,
-  email,
-  gender,
-  file,
-  year,
-  month,
-  day,
-}) => {
+export const MakeFormData = ({ name, phone, email, gender, file, birth }) => {
   const formData = new FormData();
-  const birth = `${year}-${month}-${day}`;
   formData.append("name", name);
   formData.append("phone", phone);
   formData.append("email", email);

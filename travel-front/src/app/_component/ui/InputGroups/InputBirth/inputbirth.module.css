@@ -1,0 +1,63 @@
+.birthWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 23px;
+  min-width: 250px;
+  max-width: 700px;
+  width: 100%;
+}
+.birthText {
+  font-family: Pretendard;
+  font-weight: 500;
+  color: #a3a3a3;
+  font-size: 16px;
+  margin-right: 7px;
+  font-style: normal;
+  line-height: normal;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.yearInput {
+  all: unset;
+  border-radius: 12px;
+  width: calc(25% - 15px);
+  height: 18.783px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  margin-right: 7px;
+  padding: 17px 14px;
+}
+
+.monthInput {
+  all: unset;
+  border-radius: 12px;
+  width: calc(20% - 15px);
+
+  height: 18.783px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  margin-right: 7px;
+  padding: 17px 14px;
+}
+
+.dayInput {
+  all: unset;
+  border-radius: 12px;
+  width: calc(20% - 15px);
+
+  height: 18.783px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  margin-right: 7px;
+  padding: 17px 14px;
+}

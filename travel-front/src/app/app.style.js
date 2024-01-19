@@ -24,18 +24,6 @@ const AppStyle = {
     z-index: 99;
   `,
 
-  ProfileImageWarpper: styled(Box)`
-    margin: 0px auto 0 auto;
-    width: 128px;
-    height: 128px;
-    flex-shrink: 0;
-    border-radius: 128px;
-    background-image: url("${(props) => props.imgsrc}");
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: center center;
-    margin-bottom: 56px;
-  `,
   ProfileChangeButton: styled(Box)`
     cursor: pointer;
     position: relative;

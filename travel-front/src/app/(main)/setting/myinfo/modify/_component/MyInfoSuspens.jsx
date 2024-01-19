@@ -1,14 +1,15 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { globalApi } from "@/api/global";
-import MyInfoModify from "./MyInfoModify";
+import UserForm from "@/app/_component/ui/UserForm";
 
-const MyInfoSuspens = ({ id, setForm }) => {
-  const { data } = useSuspenseQuery({
+const MyInfoSuspens = ({ form, id, setForm }) => {
+  const { data: user } = useSuspenseQuery({
     queryKey: ["user"],
     queryFn: () => globalApi.profileDetail(id),
     enabled: false,
   });
-  return <>{data && <MyInfoModify setForm={setForm} user={data.data} />}</>;
+  setForm(user.data);
+  return <>{user && <UserForm form={form} setForm={setForm} />}</>;
 };
 
 export default MyInfoSuspens;

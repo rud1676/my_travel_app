@@ -1,0 +1,32 @@
+.profileInputWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  min-width: 250px;
+  max-width: 700px;
+  width: 100%;
+}
+.profileInputText {
+  width: 80px;
+  color: #a3a3a3;
+  font-size: 16px;
+  margin-right: 7px;
+  font-style: normal;
+  line-height: normal;
+  flex-shrink: 0;
+  font-family: Pretendard;
+  font-weight: 500;
+}
+
+.profileInput {
+  all: unset;
+  border-radius: 12px;
+  width: 80%;
+  height: 18.783px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  padding: 17px 14px;
+}

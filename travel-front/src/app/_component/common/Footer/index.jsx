@@ -1,20 +1,32 @@
 "use client";
 
-import FooterStyle from "./footer.style";
+import PropTypes from "prop-types";
+
+import { Box } from "@mui/material";
+import styles from "./footer.module.css";
+
 const Footer = ({
-  backgroundColor = "#6549ba",
-  bgcolor = "#6549ba",
+  backgroundColor,
+  bgcolor = "#6549ba", //지울예정
   onClick,
   child,
 }) => {
   return (
-    <FooterStyle.FooterWrapper
+    <Box
+      className={styles.footerWrapper}
       backgroundColor={backgroundColor || bgcolor}
       onClick={onClick}
     >
       {child}
-    </FooterStyle.FooterWrapper>
+    </Box>
   );
+};
+
+Footer.propTypes = {
+  backgroundColor: PropTypes.string,
+  bgcolor: PropTypes.string,
+  child: PropTypes.any,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Footer;

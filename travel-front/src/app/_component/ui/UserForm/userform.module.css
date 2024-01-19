@@ -1,0 +1,12 @@
+.myInfoWrapper {
+  margin-top: 36px;
+}
+
+.inputWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 0px 40px 0px 40px;
+  font-family: Pretendard;
+  font-weight: 400;
+}

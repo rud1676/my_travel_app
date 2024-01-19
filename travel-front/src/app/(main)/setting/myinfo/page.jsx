@@ -1,24 +1,17 @@
 "use client";
+
 import { useRouter } from "next/navigation";
-import ProfileImage from "@/app/_component/ProfileImage";
-import MyInfo from "./myinfo.style";
+import { Box } from "@mui/material";
+
+import styles from "./myinfo.module.css";
 
 import Header from "@/app/_component/common/Header";
 import Footer from "@/app/_component/common/Footer";
+import InputProfileImage from "@/app/_component/ui/InputGroups/InputProfileImage";
+import ProfileInfoBox from "./_component/ProfileInfoBox";
+
 import useUser from "@/hooks/useUser";
 import { genderText } from "@/util/data";
-import { Pretendard_Regular } from "@/assets/fonts/fonts";
-
-const ProfileInfoBox = ({ title, content }) => {
-  return (
-    <MyInfo.InfoBox>
-      <MyInfo.TitleBox className={Pretendard_Regular.className}>
-        {title}
-      </MyInfo.TitleBox>
-      <MyInfo.ContentBox>{content}</MyInfo.ContentBox>
-    </MyInfo.InfoBox>
-  );
-};
 
 const MyInfoPage = () => {
   const { user, isLoading } = useUser();
@@ -36,22 +29,20 @@ const MyInfoPage = () => {
           navigator.push("/setting");
         }}
       />
-      <MyInfo.ProfileInfoWrapper>
-        <MyInfo.MyInfoWrapper>
-          <ProfileImage thumnail={user?.image?.location} />
-          <ProfileInfoBox title="이름" content={user?.name} />
-          <ProfileInfoBox
-            title="연락처"
-            content={user?.phone ? user?.phone : "없음"}
-          />
-          <ProfileInfoBox title="이메일" content={user?.email} />
-          <ProfileInfoBox
-            title="생년월일"
-            content={user?.birth ? user?.birth : "없음"}
-          />
-          <ProfileInfoBox title="성별" content={genderText(user.gender)} />
-        </MyInfo.MyInfoWrapper>
-      </MyInfo.ProfileInfoWrapper>
+      <Box className={styles.myInfoWrapper}>
+        <InputProfileImage thumnailsrc={user?.image?.location} />
+        <ProfileInfoBox title="이름" content={user?.name} />
+        <ProfileInfoBox
+          title="연락처"
+          content={user?.phone ? user?.phone : "없음"}
+        />
+        <ProfileInfoBox title="이메일" content={user?.email} />
+        <ProfileInfoBox
+          title="생년월일"
+          content={user?.birth ? user?.birth : "없음"}
+        />
+        <ProfileInfoBox title="성별" content={genderText(user.gender)} />
+      </Box>
       <Footer onClick={onClickModify} child={`회원 정보 수정하기`} />
     </>
   );

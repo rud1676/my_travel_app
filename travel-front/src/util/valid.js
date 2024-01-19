@@ -47,12 +47,18 @@ export const CheckMakeTravelTitle = (title) => {
   return true;
 };
 
-export const ModifyUserValid = ({ name, year, month, day }) => {
+export const ModifyUserValid = ({ name, birth }) => {
+  console.log(name, birth);
+  console.log(birth.split("-")[0].length);
   if (name.length === 0) {
     toast.error("이름을 입력해주세요!");
     return false;
   }
-  if (year.length === 0 || month.length === 0 || day.length === 0) {
+  if (
+    birth.split("-")[0].length === 0 ||
+    birth.split("-")[1].length === 0 ||
+    birth.split("-")[2].length === 0
+  ) {
     toast.error("날짜를 정확하게 입력해주세요.");
     return false;
   }

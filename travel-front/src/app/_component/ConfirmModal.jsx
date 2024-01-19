@@ -29,9 +29,10 @@ const ConfirmModal = ({
           <AppStyle.ModalTitle className={Pretendard_Bold.className}>
             {title}
           </AppStyle.ModalTitle>
-          <AppStyle.ModalSubTtitle className={Pretendard_Regular.className}>
-            {content}
-          </AppStyle.ModalSubTtitle>
+          <AppStyle.ModalSubTtitle
+            className={Pretendard_Regular.className}
+            dangerouslySetInnerHTML={{ __html: content }}
+          ></AppStyle.ModalSubTtitle>
         </AppStyle.ModalContent>
         <AppStyle.ButtonWrapper>
           <AppStyle.ConfirmButton
