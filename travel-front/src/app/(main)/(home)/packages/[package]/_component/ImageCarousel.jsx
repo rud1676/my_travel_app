@@ -9,6 +9,7 @@ const ImageCarousel = ({ imgs }) => {
 
   return (
     <Swiper
+      style={{ marginTop: "10px" }}
       pagination={{ clickable: true }}
       onSlideChange={(swiper) => {
         setCurrent(`${swiper.activeIndex + 1}/${imgs.length}`);

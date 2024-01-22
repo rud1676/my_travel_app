@@ -105,47 +105,7 @@ const AppStyle = {
     margin-left: auto;
     margin-right: auto;
   `,
-  ContentWrapper: styled(Box)``,
-  DayPickerWrapper: styled(Box)`
-    margin-top: 16px;
-    border-radius: 9px;
-    background: #fff;
-  `,
-  CalendarFooterWrapper: styled(Box)`
-    cursor: pointer;
-    bottom: 0px;
-    border-radius: 20px 20px 0px 0px;
-    background: #00ce9d;
-    box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.25);
-    width: 100%;
-    height: 93px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-  `,
-  CalendarHeaderButtonBox: styled(Box)`
-    width: 100%;
-    cursor: pointer;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `,
 
-  CalendarWrapper: styled(Box)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 320px;
-    max-width: 820px;
-    margin: auto;
-  `,
-
-  ContentWrapper: styled(Box)`
-    margin-top: 19px;
-    padding: 0px 33px 0 30px;
-  `,
   SubTitle: styled(Typography)`
     margin-top: 30px;
     font-size: 20px;

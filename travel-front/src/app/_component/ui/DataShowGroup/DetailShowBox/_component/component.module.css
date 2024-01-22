@@ -1,0 +1,23 @@
+.detailInfoBox {
+  width: 100%;
+  border-top: 1px solid #dbdbdb;
+  margin-bottom: 15px;
+  padding-top: 14px;
+}
+
+.detailInfoTitle {
+  color: #6549ba;
+  font-size: 12px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-family: Pretendard;
+}
+
+.detailInfoContent {
+  white-space: pre-wrap;
+  position: relative;
+  left: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Pretendard;
+}

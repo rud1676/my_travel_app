@@ -1,0 +1,36 @@
+.peopleSelectBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 37px;
+  margin-bottom: 22px;
+}
+
+.checkBoxLabel {
+  font-size: 14px;
+  margin-left: 16px;
+  font-family: Pretendard;
+  font-weight: 300;
+}
+
+.buttonBox {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  gap: 16px;
+}
+
+.peopleText {
+  text-align: right;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  width: 13px;
+  font-family: Pretendard;
+  font-weight: 700;
+}
+
+.peopleIconButton {
+  padding: 0px;
+  width: 37px;
+}

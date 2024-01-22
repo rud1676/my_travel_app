@@ -1,0 +1,9 @@
+.travelInfoBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 22px 16px 0px 16px;
+  width: 100%;
+}

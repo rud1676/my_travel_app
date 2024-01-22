@@ -1,0 +1,26 @@
+.optionSelectData {
+  margin-bottom: 13px;
+}
+
+.checkBoxWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.checkBoxLabel {
+  font-size: 14px;
+  margin-left: 16px;
+  font-family: Pretendard;
+  font-weight: 300;
+}
+
+.optionPriceText {
+  color: #000;
+  text-align: right;
+  margin-right: 17px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  font-family: Pretendard;
+  font-weight: 700;
+}

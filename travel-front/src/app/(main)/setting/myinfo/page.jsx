@@ -7,7 +7,7 @@ import styles from "./myinfo.module.css";
 
 import Header from "@/app/_component/common/Header";
 import Footer from "@/app/_component/common/Footer";
-import InputProfileImage from "@/app/_component/ui/InputGroups/InputProfileImage";
+import InputProfileImage from "@/app/_component/ui/InputGroup/InputProfileImage";
 import ProfileInfoBox from "./_component/ProfileInfoBox";
 
 import useUser from "@/hooks/useUser";

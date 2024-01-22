@@ -1,19 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Box } from "@mui/material";
 import dynamic from "next/dynamic";
 
 import ImageCarousel from "@/app/(main)/(home)/packages/[package]/_component/ImageCarousel";
-import Navigator from "@/app/(main)/(home)/packages/[package]/_component/Navigator";
-import TravelInfo from "@/app/(main)/(home)/packages/[package]/_component/package-info/TravelInfo";
-import TravelCourse from "@/app/(main)/(home)/packages/[package]/_component/package-course/TravelCourse";
+import MenuBar from "@/app/(main)/(home)/packages/[package]/_component/MenuBar";
+import PackageInfo from "@/app/(main)/(home)/packages/[package]/_component/PackageInfo";
+import PackageCourse from "@/app/(main)/(home)/packages/[package]/_component/PackageCourse";
 
 const TravelGuide = dynamic(
   () =>
-    import(
-      "@/app/(main)/(home)/packages/[package]/_component/package-guide/TravelGuide"
-    ),
+    import("@/app/(main)/(home)/packages/[package]/_component/PackageGuide"),
   { ssr: false }
 );
 
@@ -21,11 +18,11 @@ const Main = ({ setRange, range, travel }) => {
   const [page, setPage] = useState(0);
 
   return (
-    <Box>
+    <>
       <ImageCarousel imgs={travel.images} />
-      <Navigator setPage={setPage} />
+      <MenuBar setPage={setPage} page={page} />
       {page === 0 && (
-        <TravelInfo
+        <PackageInfo
           range={range}
           setRange={setRange}
           totaldays={travel.totaldays}
@@ -33,10 +30,10 @@ const Main = ({ setRange, range, travel }) => {
           optionlist={travel.options}
         />
       )}
-      {page === 1 && <TravelCourse courses={travel.courses} />}
+      {page === 1 && <PackageCourse courses={travel.courses} />}
       {page === 2 && <TravelGuide content={travel.guide} />}
       {page === 3 && <TravelGuide content={travel.policy} />}
-    </Box>
+    </>
   );
 };
 

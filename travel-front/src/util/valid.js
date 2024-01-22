@@ -1,4 +1,7 @@
+"use client";
+
 import { toast } from "react-hot-toast";
+import useUser from "@/hooks/useUser";
 
 export const PlanDetailMakeValid = (form) => {
   const [h, m] = form.time.split(":");
@@ -8,7 +11,6 @@ export const PlanDetailMakeValid = (form) => {
     toast.error("시간을 정확히 입력해주세요");
     return false;
   }
-  console.log(form?.title);
   if (form?.title === undefined || form.title === "") {
     toast.error("제목을 입력하세요");
     return false;
@@ -65,7 +67,8 @@ export const ModifyUserValid = ({ name, birth }) => {
   return true;
 };
 
-export const Checkuser = (user) => {
+export const useCheckUser = () => {
+  const user = useUser();
   if (!user) {
     toast.error("로그인을 해야합니다.");
     return false;

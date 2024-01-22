@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 
 import styles from "./userform.module.css";
 
-import InputLabel from "@/app/_component/ui/InputGroups/InputLabel";
-import InputBirth from "@/app/_component/ui/InputGroups/InputBirth";
-import InputGender from "@/app/_component/ui/InputGroups/InputGender";
-import InputProfileImage from "../InputGroups/InputProfileImage";
+import InputLabel from "@/app/_component/ui/InputGroup/InputLabel";
+import InputBirth from "@/app/_component/ui/InputGroup/InputBirth";
+import InputGender from "@/app/_component/ui/InputGroup/InputGender";
+import InputProfileImage from "../InputGroup/InputProfileImage";
 
 const UserForm = ({ setForm, form }) => {
   return (

@@ -1,0 +1,21 @@
+.confirmDateWrapper {
+  border-radius: 10px;
+}
+.selectDateTextBox {
+  display: flex;
+  padding-left: 15px;
+  margin-bottom: 8px;
+}
+.confirmDateKeyText {
+  font-family: Pretendard;
+  font-weight: 700;
+  color: #9a9a9a;
+  font-size: 14px;
+  margin: 0 43px 0 0;
+}
+.selectDateValueText {
+  margin: 0;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: 700;
+}

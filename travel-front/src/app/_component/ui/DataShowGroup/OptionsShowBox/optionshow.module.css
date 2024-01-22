@@ -1,0 +1,13 @@
+.optionSelectBox {
+  width: 80%;
+  margin-top: 27px;
+  margin-bottom: 16px;
+}
+
+.optionSelectTitle {
+  color: #d5004d;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-family: Pretendard;
+  font-weight: 700;
+}

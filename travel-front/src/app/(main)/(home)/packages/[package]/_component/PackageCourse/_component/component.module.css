@@ -1,0 +1,69 @@
+.oneDayCourseBox {
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.dayTitleBox {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  margin-bottom: 14px;
+}
+
+.dayNumberBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 82px;
+  height: 42px;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: 300;
+}
+
+.dayName {
+  background: #f0f0f0;
+  padding-left: 10px;
+  width: calc(100% - 82px);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 300;
+}
+
+.scheduleWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scheduleIcon {
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 30px;
+  height: 35px;
+  z-index: 1;
+}
+
+.scheduleLine {
+  border-left: 1px solid #e6e6e6;
+  height: 30px;
+  position: relative;
+  left: -16.5px;
+  z-index: 0;
+  top: 50%;
+  transform: translateY(50%);
+  overflow: hidden;
+}
+
+.scheduleText {
+  margin-left: 10px;
+
+  line-height: normal;
+  position: relative;
+  font-family: Pretendard;
+  font-weight: 300;
+}
