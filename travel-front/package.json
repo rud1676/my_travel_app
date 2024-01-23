@@ -16,7 +16,6 @@
     "@mui/material": "^5.14.6",
     "@react-google-maps/api": "^2.19.2",
     "@tanstack/react-query": "^5.13.4",
-    "autoprefixer": "10.4.15",
     "axios": "^1.5.0",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.10",
@@ -36,11 +35,9 @@
     "react-material-ui-carousel": "^3.4.2",
     "react-quill-2": "^2.0.2",
     "react-use-draggable-scroll": "^0.4.7",
-    "recoil": "^0.7.7",
     "sass": "^1.69.3",
     "swiper": "^11.0.3",
     "swr": "^2.2.4",
-    "tailwindcss": "3.3.3",
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
