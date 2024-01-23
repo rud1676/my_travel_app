@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { Toaster } from "react-hot-toast";
-import AppStyle from "../app.style";
+import AppStyle from "../../app.style";
 
 let theme = createTheme({
   typography: {

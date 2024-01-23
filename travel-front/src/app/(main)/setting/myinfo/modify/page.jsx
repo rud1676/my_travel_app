@@ -6,7 +6,7 @@ import Image from "next/image";
 import Header from "@/app/_component/common/Header";
 import Footer from "@/app/_component/common/Footer";
 import Modal from "@/app/_component/ConfirmModal";
-import UserForm from "@/app/_component/ui/UserForm";
+import UserForm from "@/app/_component/ui/Frame/UserForm";
 
 import useUser from "@/hooks/useUser";
 import useCustomMutate from "@/hooks/useCustomMutate";

@@ -1,6 +1,6 @@
 "use client";
 
-import Suspense from "@/app/_component/ui/Suspense";
+import Suspense from "@/app/_component/ui/Frame/Suspense";
 
 const Error = () => {
   return (

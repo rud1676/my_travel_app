@@ -1,0 +1,20 @@
+.profileWrapper {
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: center;
+  height: 96px;
+  align-items: flex-end;
+}
+
+.headerText {
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  line-height: normal;
+  font-family: Pretendard;
+  font-weight: 300;
+}

@@ -9,6 +9,7 @@ import styles from "./confirmreserve.module.css";
 import DateShowBox from "@/app/_component/ui/DataShowGroup/DateShowBox";
 import OptionSelectBox from "@/app/_component/ui/SelectBoxGroup/OptionSelectBox";
 import PeopleSelectBox from "@/app/_component/ui/SelectBoxGroup/PeopleSelectBox";
+import TotalPriceBox from "@/app/_component/ui/DataShowGroup/TotalPriceBox";
 
 import { travelPackageApi } from "@/api/travel";
 import CloseDrawerIcon from "@/assets/img/CloseDrawerIcon.svg";
@@ -70,13 +71,7 @@ const ConfirmReserve = ({ id, options, setOpenConfirm, range }) => {
           child={child}
           setChild={setChild}
         />
-        <Box className={styles.totalPriceBox}>
-          <p className={styles.totalPriceLabel}>총 금액</p>
-
-          <p
-            className={styles.totalPriceText}
-          >{`₩ ${totalPrice.toLocaleString()}`}</p>
-        </Box>
+        <TotalPriceBox totalPrice={totalPrice} />
         <Box
           className={styles.confirmFooterWrapper}
           onClick={() => {

@@ -1,0 +1,11 @@
+.showDetailInfo {
+  cursor: pointer;
+  margin: -20px 0 20px 0;
+  font-size: 11px;
+  font-style: normal;
+  line-height: normal;
+  display: flex;
+  justify-content: right;
+  font-family: Pretendard;
+  font-weight: 400;
+}

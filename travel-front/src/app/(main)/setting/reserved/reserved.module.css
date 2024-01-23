@@ -1,0 +1,10 @@
+.reservedWrapper {
+  width: 100%;
+  margin-top: 60px;
+  display: grid;
+  place-items: center;
+
+  @media all and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

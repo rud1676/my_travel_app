@@ -1,6 +1,6 @@
 "use client";
 import { CircularProgress } from "@mui/material";
-import Suspense from "../_component/ui/Suspense";
+import Suspense from "../_component/ui/Frame/Suspense";
 
 const Loading = () => {
   return (

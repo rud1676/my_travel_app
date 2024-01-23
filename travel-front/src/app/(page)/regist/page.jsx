@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import Header from "@/app/_component/common/Header";
 import Footer from "@/app/_component/common/Footer";
-import UserForm from "@/app/_component/ui/UserForm";
+import UserForm from "@/app/_component/ui/Frame/UserForm";
 
 import CheckIconWhite from "@/assets/img/CheckIconWhite.svg";
 

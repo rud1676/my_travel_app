@@ -1,0 +1,61 @@
+.menuAlert {
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+.menuAlertText {
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  margin-right: 20px;
+}
+
+.minimalSwitchBox {
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.minimalSwitchCircle {
+  height: 24px;
+  width: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.menuAlertTime {
+  display: flex;
+  margin-bottom: 56px;
+}
+
+.menuAlertMinute {
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  margin-right: 20px;
+  color: #6549ba;
+}
+
+.menuTitle {
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+.menuTitleText {
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  margin-bottom: 16px;
+  font-family: Pretendard;
+  font-weight: 600;
+}

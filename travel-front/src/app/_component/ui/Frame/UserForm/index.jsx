@@ -8,7 +8,7 @@ import styles from "./userform.module.css";
 import InputLabel from "@/app/_component/ui/InputGroup/InputLabel";
 import InputBirth from "@/app/_component/ui/InputGroup/InputBirth";
 import InputGender from "@/app/_component/ui/InputGroup/InputGender";
-import InputProfileImage from "../InputGroup/InputProfileImage";
+import InputProfileImage from "@/app/_component/ui/InputGroup/InputProfileImage";
 
 const UserForm = ({ setForm, form }) => {
   return (

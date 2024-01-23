@@ -1,12 +1,13 @@
 "use client";
 
-import MainStyle from "@/app/app.style";
+import { Box } from "@mui/material";
+import styles from "./main.module.css";
 import MainFooter from "@/app/(main)/_component/MainFooter";
 
 const RootLayout = ({ children }) => {
   return (
     <>
-      <MainStyle.ScreenWrapper>{children}</MainStyle.ScreenWrapper>
+      <Box className={styles.screenWrapper}>{children}</Box>
       <MainFooter />
     </>
   );

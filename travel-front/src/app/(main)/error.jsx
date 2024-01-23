@@ -1,10 +1,11 @@
 "use client";
-import MainStyle from "./main.style";
+import Suspense from "../_component/ui/Frame/Suspense";
 const Error = () => {
   return (
-    <MainStyle.LoadingBox color="red">
-      서버 에러가 났습니다 관리자에게 문의해주세요
-    </MainStyle.LoadingBox>
+    <Suspense
+      title="서버 에러가 났습니다 관리자에게 문의해주세요"
+      color="red"
+    />
   );
 };
 

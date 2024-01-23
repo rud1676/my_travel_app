@@ -29,7 +29,7 @@ const Calendar = ({
 
   const disabledDays = [{ from: new Date(2022, 4, 18), to: new Date() }];
   return (
-    <Box className={styles.ContentWrapper}>
+    <Box>
       <Box className={styles.calendarWrapper}>
         <Global
           styles={css`

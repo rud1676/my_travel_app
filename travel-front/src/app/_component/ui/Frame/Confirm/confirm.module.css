@@ -1,0 +1,100 @@
+.contentWrapper {
+  margin-top: 19px;
+  padding: 0px 33px 0 30px;
+}
+
+.subTitle {
+  margin-top: 30px;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+  padding: 0px 32px 0px 32px;
+  margin-bottom: 40px;
+  font-family: Pretendard;
+  font-weight: 400;
+}
+
+.dateShowBox {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 25px 0;
+}
+.optionTitle {
+  color: #6549ba;
+  font-style: normal;
+  line-height: normal;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 700;
+}
+
+.optionBox {
+  border-radius: 10px;
+  background: #fff;
+  padding: 17px 0px 21px 17px;
+}
+
+.optionDataBox {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.optionSubTitle {
+  font-size: 14px;
+  margin-left: 16px;
+  text-align: left;
+  font-family: Pretendard;
+  font-weight: 300;
+}
+
+.optionPriceText {
+  text-align: right;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  margin-right: 15px;
+  font-family: Pretendard;
+  font-weight: 700;
+}
+
+.peopleBox {
+  border-radius: 10px;
+  background: #fff;
+  margin-top: 19px;
+  padding: 24px 64px 58px 17px;
+}
+
+.adultBox {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  justify-content: space-between;
+}
+
+.adultText {
+  text-align: right;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  font-family: Pretendard;
+  font-weight: 700;
+}
+
+.childBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.infoText {
+  margin-bottom: 163px;
+  padding: 0px 40px;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+}

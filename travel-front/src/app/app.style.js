@@ -106,84 +106,12 @@ const AppStyle = {
     margin-right: auto;
   `,
 
-  SubTitle: styled(Typography)`
-    margin-top: 30px;
-    font-size: 20px;
-    font-style: normal;
-    line-height: normal;
-    text-align: center;
-    padding: 0px 32px 0px 32px;
-    margin-bottom: 40px;
-  `,
-  DateShowBox: styled(Box)`
-    display: flex;
-    justify-content: center;
-    margin-top: 8px;
-  `,
-  OptionBox: styled(Box)`
-    border-radius: 10px;
-    background: #fff;
-    padding: 17px 0px 21px 17px;
-  `,
-  OptionTitle: styled(Typography)`
-    color: #6549ba;
-    font-style: normal;
-    line-height: normal;
-    font-size: 14px;
-  `,
-  OptionSubTitle: styled(Typography)`
-    font-size: 14px;
-    margin-left: 16px;
-    text-align: left;
-  `,
-
-  OptionDataBox: styled(Box)`
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  `,
-
-  OptionPriceText: styled.p`
-    text-align: right;
-    font-size: 16px;
-    font-style: normal;
-    line-height: normal;
-    margin-right: 15px;
-  `,
   TotalPriceBox: styled(Box)`
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 24px 43px 71px 40px;
     width: 80%;
-  `,
-
-  PeopleBox: styled(Box)`
-    border-radius: 10px;
-    background: #fff;
-    margin-top: 19px;
-    padding: 24px 64px 58px 17px;
-  `,
-
-  AdultBox: styled(Box)`
-    display: flex;
-    align-items: center;
-    margin-top: 12px;
-    justify-content: space-between;
-  `,
-  AdultText: styled(Typography)`
-    text-align: right;
-    font-size: 16px;
-    font-style: normal;
-    line-height: normal;
-  `,
-
-  ChildBox: styled(Box)`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 12px;
   `,
 
   TotalPriceTitle: styled.p`
@@ -195,15 +123,6 @@ const AppStyle = {
     font-size: 24px;
     line-height: normal;
     text-align: right;
-  `,
-
-  InfoText: styled.p`
-    margin-bottom: 163px;
-    padding: 0px 40px;
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    line-height: normal;
   `,
 };
 
