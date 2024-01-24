@@ -1,0 +1,72 @@
+.planBox {
+  width: 362px;
+}
+
+.planMiniWrapper {
+  cursor: pointer;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  width: 344px;
+  height: 81px;
+  flex-shrink: 0;
+}
+
+.planMiniHeader {
+  width: 344px;
+  height: 40px;
+  flex-shrink: 0;
+  background: #e3def3;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.planMiniHeaderText {
+  position: relative;
+  left: 130px;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: 700;
+  font-family: Pretendard;
+}
+
+.planPicture {
+  z-index: 7;
+  position: relative;
+  transform: rotate(-10deg);
+  width: 122px;
+  height: 86px;
+  border: 3px solid #fff;
+  background-size: cover;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.planMiniDateText {
+  position: relative;
+  width: 200px;
+  left: 130px;
+  top: -73px;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  font-family: Pretendard;
+  font-weight: 300;
+}
+
+.miniDeleteBox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 345px;
+  top: -70px;
+  position: relative;
+  border-radius: 0px 5px 5px 0px;
+  background: #ff453a;
+  width: 30px;
+  height: 28px;
+  flex-shrink: 0;
+  z-index: 1;
+}

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import Header from "@/app/(main)/schedule/_component/Header";
+import ScheduleHeader from "@/app/(main)/schedule/_component/ScheduleHeader";
 import Main from "@/app/(main)/schedule/_component/Main";
 import TeleModal from "./_component/TeleModal";
 import MemoModal from "./_component/MemoModal";
@@ -24,7 +24,7 @@ const Schedule = () => {
   const [memo, setMemo] = useState("");
   return (
     <>
-      <Header
+      <ScheduleHeader
         details={plan}
         year={year}
         month={month + 1}

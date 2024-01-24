@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSuspenseQuery } from "@tanstack/react-query";
+
 import Header from "./_component/Header";
 import Main from "./_component/Main";
 import DateSection from "./_component/DateSection";
 import Footer from "./_component/Footer";
-import ConfirmModal from "@/app/_component/ConfirmModal";
+import ConfirmModal from "@/app/_component/ui/Modal/ConfirmModal";
 import FooterDrawer from "./_component/FooterDrawer";
 
 import { myPlanApi } from "@/api/myplan";
-import { useSuspenseQuery } from "@tanstack/react-query";
 import useCustomMutate from "@/hooks/useCustomMutate";
 const PlanDetail = ({ params }) => {
   const plan_id = parseInt(params.plan_id);

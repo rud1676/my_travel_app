@@ -23,7 +23,6 @@ const MakePlan = () => {
   // 수정 일때 사용
   const plan_id = parseInt(params.get("id"), 10);
   const step = parseInt(params.get("step"), 10);
-  //
 
   const [page, setPage] = useState(step || 0);
   const [title, setTitle] = useState("");

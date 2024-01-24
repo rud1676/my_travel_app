@@ -1,0 +1,53 @@
+.modalWrapper {
+  border-radius: 9px 9px 9px 9px;
+  background: #efefef;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 297px;
+  box-shadow: 24px;
+  padding: 4px;
+}
+
+.modalContent {
+  border-bottom: 1px solid gray;
+  padding-bottom: 17px;
+}
+
+.modalTitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  font-family: Pretendard;
+  font-weight: 700;
+}
+
+.buttonWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.confirmButton {
+  padding: 18px 57px 17px 57px;
+  color: #4987f7;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  font-family: Pretendard;
+  font-weight: 400;
+}
+
+.closeText {
+  color: #4987f7;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  font-family: Pretendard;
+  font-weight: 600;
+}

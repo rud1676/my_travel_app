@@ -2,8 +2,9 @@
 
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
-import SchduleComponent from "./ScheduleComponent";
-import PlanDetail from "../plandetail.style";
+import Schdule from "../Schedule";
+import { Box } from "@mui/material";
+import styles from "./main.module.css";
 
 // 재 배치시 적용시키는 함수
 const reorder = (list, startIndex, endIndex) => {
@@ -42,7 +43,8 @@ const Main = ({
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="droppable">
           {(provide) => (
-            <PlanDetail.MainWrapper
+            <Box
+              className={styles.mainWrapper}
               ref={provide.innerRef}
               {...provide.droppableProps}
             >
@@ -58,7 +60,7 @@ const Main = ({
                         border: snapshot.isDragging ? "2px solid blue" : "",
                       }}
                     >
-                      <SchduleComponent
+                      <Schdule
                         plan_id={plan_id}
                         isSetting={isSetting}
                         onClickDelete={onClickDelete}
@@ -73,17 +75,17 @@ const Main = ({
                 </Draggable>
               ))}
               {provide.placeholder}
-            </PlanDetail.MainWrapper>
+            </Box>
           )}
         </Droppable>
       </DragDropContext>
     );
   }
   return (
-    <PlanDetail.MainWrapper>
+    <Box className={styles.mainWrapper}>
       {details.map((v, i) => {
         return (
-          <SchduleComponent
+          <Schdule
             plan_id={plan_id}
             index={i + 1}
             isSetting={isSetting}
@@ -95,7 +97,7 @@ const Main = ({
           />
         );
       })}
-    </PlanDetail.MainWrapper>
+    </Box>
   );
 };
 

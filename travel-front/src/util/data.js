@@ -15,12 +15,108 @@ import home_active from "@/assets/img/home_active.svg";
 import schedule_active from "@/assets/img/schedule_active.svg";
 import setting_active from "@/assets/img/setting_active.svg";
 
+import TagSticker_Gray from "@/assets/img/TagSticker_Gray.svg";
+import TagSticker_Orange from "@/assets/img/TagSticker_Orange.svg";
+import TagSticker_Yellow from "@/assets/img/TagSticker_Yellow.svg";
+import TagSticker_Green from "@/assets/img/TagSticker_Green.svg";
+import TagSticker_Blue from "@/assets/img/TagSticker_Blue.svg";
+import TagSticker_Violet from "@/assets/img/TagSticker_Violet.svg";
+import TagSticker_Purple from "@/assets/img/TagSticker_Purple.svg";
+import TagSticker_Pink from "@/assets/img/TagSticker_Pink.svg";
+
 import { LocalSave } from "@/LocalSave";
 import { globalApi } from "@/api/global";
+
+import StickerBall from "@/assets/img/StickerBall.svg";
+import StickerCamera from "@/assets/img/StickerCamera.svg";
+import StickerFlag from "@/assets/img/StickerFlag.svg";
+import StickerFlight from "@/assets/img/StickerFlight.svg";
+import StickerFlower from "@/assets/img/StickerFlower.svg";
+import StickerHeart from "@/assets/img/StickerHeart.svg";
+import StickerMail from "@/assets/img/StickerMail.svg";
+import StickerMusic from "@/assets/img/StickerMusic.svg";
+import StickerSmile from "@/assets/img/StickerSmile.svg";
+import StickerStar from "@/assets/img/StickerStar.svg";
+
+import PlanSticker1 from "@/assets/img/PlanSticker1.svg";
+import PlanSticker2 from "@/assets/img/PlanSticker2.svg";
+import PlanSticker3 from "@/assets/img/PlanSticker3.svg";
+import PlanSticker4 from "@/assets/img/PlanSticker4.svg";
+import PlanSticker5 from "@/assets/img/PlanSticker5.svg";
+
+import LineSticker1 from "@/assets/img/LineSticker1.svg";
+import LineSticker2 from "@/assets/img/LineSticker2.svg";
+import LineSticker3 from "@/assets/img/LineSticker3.svg";
+import LineSticker4 from "@/assets/img/LineSticker4.svg";
+import LineSticker5 from "@/assets/img/LineSticker5.svg";
+
+import Type2LineSticker1 from "@/assets/img/Type2LineSticker1.svg";
+import Type2LineSticker2 from "@/assets/img/Type2LineSticker2.svg";
+import Type2LineSticker3 from "@/assets/img/Type2LineSticker3.svg";
+import Type2LineSticker4 from "@/assets/img/Type2LineSticker4.svg";
+import Type2LineSticker5 from "@/assets/img/Type2LineSticker5.svg";
+
+export const Type2LineStickers = [
+  Type2LineSticker1.src,
+  Type2LineSticker2.src,
+  Type2LineSticker3.src,
+  Type2LineSticker4.src,
+  Type2LineSticker5.src,
+];
+
+export const LineSticker = [
+  LineSticker1.src,
+  LineSticker2.src,
+  LineSticker3.src,
+  LineSticker4.src,
+  LineSticker5.src,
+];
+
+export const PlanSticker = [
+  PlanSticker1.src,
+  PlanSticker2.src,
+  PlanSticker3.src,
+  PlanSticker4.src,
+  PlanSticker5.src,
+];
+
+export const Stickers = [
+  StickerBall.src,
+  StickerCamera.src,
+  StickerFlag.src,
+  StickerFlight.src,
+  StickerFlower.src,
+  StickerHeart.src,
+  StickerMail.src,
+  StickerMusic.src,
+  StickerSmile.src,
+  StickerStar.src,
+];
 
 export const ScheduleIcons = [schedule_active.src, schedule.src];
 export const SettingIcons = [setting_active.src, setting.src];
 export const HomeIcons = [home_active.src, home.src];
+
+export const sticker = [
+  TagSticker_Gray.src,
+  TagSticker_Orange.src,
+  TagSticker_Yellow.src,
+  TagSticker_Green.src,
+  TagSticker_Blue.src,
+  TagSticker_Violet.src,
+  TagSticker_Purple.src,
+  TagSticker_Pink.src,
+];
+export const tagcolor = [
+  "#DFDFDF",
+  "#FFDEDE",
+  "#FFF0C9",
+  "#CEFEC2",
+  "#CDF3FF",
+  "#C5CAFF",
+  "#DBACFF",
+  "#FFC1F9",
+];
 
 export const color = ["#7D7D7D", "#6549BA", "#d52f2f", "#00C596"];
 export const statusText = [

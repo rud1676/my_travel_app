@@ -1,0 +1,12 @@
+.mainWrapper {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding: 15px 14px 0px 17px;
+  @media (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*{(props) => props.isMini === "true" && "row-gap: 20px;"}*/

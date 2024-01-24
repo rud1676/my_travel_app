@@ -1,0 +1,8 @@
+.mainWrapper {
+  padding: 15px 16px 0px 18px;
+}
+
+.travelButtonBox {
+  display: flex;
+  justify-content: space-around;
+}

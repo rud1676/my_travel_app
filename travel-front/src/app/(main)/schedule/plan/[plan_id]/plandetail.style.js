@@ -2,49 +2,6 @@ import { Box, Typography, SwipeableDrawer } from "@mui/material";
 import styled from "@emotion/styled";
 
 const PlanDetail = {
-  MainWrapper: styled(Box)`
-    padding: 15px 16px 0px 18px;
-    & img {
-      cursor: pointer;
-    }
-  `,
-  MiniDeleteBox: styled(Box)`
-    cursor: pointer;
-    position: relative;
-    left: calc(100% - 0px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    top: -165px;
-    position: relative;
-    border-radius: 0px 5px 5px 0px;
-    background: #ff453a;
-    width: 30px;
-    height: 28px;
-    flex-shrink: 0;
-    z-index: 1;
-  `,
-  IconBox: styled(Box)`
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    background-image: url("${(props) => props.imgurl}");
-  `,
-  ScheduleMove: styled(Box)`
-    cursor: pointer;
-    position: relative;
-    left: calc(100% - 0px);
-    top: -80px;
-    border-radius: 0px 5px 5px 0px;
-    background: #d9d9d9;
-    width: 26px;
-    height: 50px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-  `,
   ButtonTitle: styled(Typography)`
     color: #4987f7;
     font-size: 20px;
@@ -132,37 +89,6 @@ export const HeaderButton = styled.button`
   all: unset;
   cursor: pointer;
   text-align: center;
-`;
-
-export const DateSectionWrapper = styled(Box)`
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-
-  ::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
-  }
-  cursor: pointer;
-  padding: 6px 10px;
-  align-items: center;
-  overflow: scroll;
-  width: 100%;
-  margin-top: 15px;
-  display: flex;
-  gap: 6px;
-`;
-
-export const DateWrapper = styled.div`
-  cursor: pointer;
-  display: flex;
-  flex: 0 0 auto;
-  width: 78px;
-  height: 42px;
-  background-image: url("${(props) => props.imgsrc}");
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-size: 16px;
-  line-height: normal;
 `;
 
 export default PlanDetail;

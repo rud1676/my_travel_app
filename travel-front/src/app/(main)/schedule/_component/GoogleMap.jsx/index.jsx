@@ -3,6 +3,9 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 
+import styles from "./googlemap.module.css";
+import { Box } from "@mui/material";
+
 import {
   GoogleMap,
   LoadScript,
@@ -10,7 +13,6 @@ import {
   StandaloneSearchBox,
 } from "@react-google-maps/api";
 import ArrowBack from "@/assets/img/Arrow_Back.svg";
-import HomeStyle from "@/app/(main)/(home)/home.style";
 
 const libraries = ["places"];
 
@@ -35,37 +37,24 @@ const MapSearchComponent = ({
 
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyBl9pQdLUycOlg7QKL9CQoo_aK4yyw0hSA"
+      googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
       libraries={libraries}
     >
       <StandaloneSearchBox onLoad={(ref) => (searchBoxRef.current = ref)}>
-        <div
-          style={{
-            position: "absolute",
-            display: "flex",
-            zIndex: 99,
-            width: "100%",
-            height: "30px",
-            marginTop: "57px",
-          }}
-        >
-          <HomeStyle.HeaderBackButton
+        <div className={styles.mapWrapper}>
+          <Box
+            className={styles.headerButton}
             onClick={() => {
               setMapOpen(false);
             }}
           >
             <Image width={17} height={29} src={ArrowBack.src} alt="" />
-          </HomeStyle.HeaderBackButton>
+          </Box>
           <input
             readOnly
             type="text"
             placeholder="Search location"
-            style={{
-              width: `calc(100% - 77px)`,
-              borderRadius: "10px",
-              background: "#E2E2E2",
-              boxShadow: "0px 2px 1px 0px rgba(0, 0, 0, 0.25) inset",
-            }}
+            className={styles.searchLocationInput}
             value={placeName}
           />
         </div>
@@ -95,18 +84,7 @@ const GoogleMapComponent = ({ location, setMapOpen, placeName, mapOpen }) => {
   }, [mapOpen, mapRef]);
 
   return (
-    <div
-      ref={mapRef}
-      style={{
-        position: "absolute",
-        display: "none",
-        width: "100vw",
-        height: "100vh",
-        zIndex: 99,
-        top: 0,
-        left: 0,
-      }}
-    >
+    <div ref={mapRef} className={styles.mapContainer}>
       <MapSearchComponent
         location={location}
         placeName={placeName}

@@ -1,0 +1,21 @@
+.memoWrapper {
+  border-radius: 9px 9px 9px 9px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 290px;
+  height: 312px;
+}
+
+.memoTextarea {
+  all: unset;
+  margin-left: 17px;
+  margin-top: 14px;
+  width: calc(100% - 30px);
+  display: block;
+  padding-bottom: 10px;
+  white-space: pre-wrap;
+  height: 280px;
+  text-shadow: 0 0 0 black;
+}

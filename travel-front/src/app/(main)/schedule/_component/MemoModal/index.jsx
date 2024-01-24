@@ -1,8 +1,8 @@
 "use client";
 
-import { Modal } from "@mui/material";
+import { Modal, Box } from "@mui/material";
+import styles from "./memomodal.module.css";
 
-import Schedule from "../schedule.style";
 import ShowMemo from "@/assets/img/ShowMemo.svg";
 
 const MemoModal = ({ memo = "", setMemo }) => {
@@ -16,9 +16,18 @@ const MemoModal = ({ memo = "", setMemo }) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Schedule.MemoWrapper imgsrc={ShowMemo.src}>
-        <Schedule.MemoTextarea disabled value={memo} cols="3" rows="3" />
-      </Schedule.MemoWrapper>
+      <Box
+        className={styles.memoWrapper}
+        sx={{ backgroundImage: `url("${ShowMemo.src}")` }}
+      >
+        <textarea
+          className={styles.memoTextarea}
+          disabled
+          value={memo}
+          cols="3"
+          rows="3"
+        />
+      </Box>
     </Modal>
   );
 };

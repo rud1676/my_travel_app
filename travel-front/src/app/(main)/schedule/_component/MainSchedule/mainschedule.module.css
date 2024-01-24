@@ -1,0 +1,95 @@
+.schduleComponentWrapper {
+  width: 95%;
+  height: 112px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+.scheduleHeader {
+  cursor: pointer;
+  display: flex;
+  gap: 55px;
+  height: 46px;
+  border-radius: 15px 15px 0px 0px;
+  text-align: center;
+}
+
+.scheduleSticker {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 8px;
+  left: -10px;
+  transform: rotate(330deg);
+  width: 78px;
+  height: 42px;
+  font-weight: 700;
+  font-family: Pretendard;
+}
+
+.scheduleTitle {
+  position: relative;
+  top: 13px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: 700;
+  font-family: Pretendard;
+}
+
+.schduleMain {
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+.leftBox {
+  display: flex;
+}
+
+.schedulePicture {
+  position: relative;
+  top: -15px;
+  width: 122px;
+  height: 86px;
+  border: 3px solid #fff;
+
+  background-size: cover;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.scheduleDetail {
+  margin-left: 13px;
+  position: relative;
+  left: 0;
+  margin-top: 5px;
+}
+
+.scheduleTime {
+  font-size: 24px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.24px;
+  margin-bottom: 4px;
+  font-weight: 800;
+  font-family: Pretendard;
+}
+
+.schedulePlace {
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: 300;
+  font-family: Pretendard;
+}
+
+.scheduleIconBox {
+  display: flex;
+  height: 30px;
+  position: relative;
+  gap: 7px;
+  top: 50px;
+}

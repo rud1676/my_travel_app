@@ -1,0 +1,28 @@
+.dateWrapper {
+  cursor: pointer;
+  display: flex;
+  flex: 0 0 auto;
+  width: 78px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 16px;
+  line-height: normal;
+  font-family: Pretendard;
+  font-weight: 700;
+}
+
+.dateSectionWrapper {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  cursor: pointer;
+  padding: 6px 10px;
+  align-items: center;
+  overflow: scroll;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  gap: 6px;
+}

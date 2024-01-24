@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import SchduleComponent from "./ScheduleComponent";
+import SchduleComponent from "../MainSchedule";
 
-import Schedule from "../schedule.style";
+import { Box } from "@mui/material";
+import styles from "./main.module.css";
+
 import MyTravelList from "@/assets/img/MyTravelList.svg";
 import NewTravelMake from "@/assets/img/NewTravelMake.svg";
 
@@ -18,7 +20,7 @@ const Main = ({ setMemo, setPhoneNum, plans }) => {
     navigator.push("/schedule/plan");
   };
   return (
-    <Schedule.MainWrapper>
+    <Box className={styles.mainWrapper}>
       {plans.map((v) => {
         return (
           <SchduleComponent
@@ -29,8 +31,9 @@ const Main = ({ setMemo, setPhoneNum, plans }) => {
           />
         );
       })}
-      <Schedule.TravelButtonBox>
+      <Box className={styles.travelButtonBox}>
         <Image
+          style={{ cursor: "pointer" }}
           onClick={onClickMakePlan}
           src={NewTravelMake.src}
           width={177}
@@ -38,14 +41,15 @@ const Main = ({ setMemo, setPhoneNum, plans }) => {
           alt="새로운여행버튼"
         />
         <Image
+          style={{ cursor: "pointer" }}
           onClick={onClickMyPlan}
           src={MyTravelList.src}
           width={177}
           height={127}
           alt="내여행목록버튼"
         />
-      </Schedule.TravelButtonBox>
-    </Schedule.MainWrapper>
+      </Box>
+    </Box>
   );
 };
 

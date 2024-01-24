@@ -4,7 +4,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import Plan from "../plan.style";
+import { Box } from "@mui/material";
+import styles from "./planmini.module.css";
+
+import Plan from "../../plan.style";
 import PlanFolder from "@/assets/img/PlanFolder.svg";
 import DeleteIcon from "@/assets/img/DeleteIcon.svg";
 import { Pretendard_Bold, Pretendard_Medium } from "@/assets/fonts/fonts";
@@ -31,27 +34,33 @@ const PlanMiniComponent = ({ onClickDeleteButton, type, plan }) => {
   }, [setImg, details]);
 
   return (
-    <Plan.PlanBox>
-      <Plan.PlanMiniWrapper onClick={onClickPlan} url={PlanFolder.src}>
-        <Plan.PlanMiniHeader>
-          <Plan.PlanMiniHeaderText className={Pretendard_Bold.className}>
-            {title}
-          </Plan.PlanMiniHeaderText>
-        </Plan.PlanMiniHeader>
-        <Plan.PlanPicture
-          imgsrc={img}
+    <Box className={styles.planBox}>
+      <Box
+        className={styles.planMiniWrapper}
+        onClick={onClickPlan}
+        sx={{ backgroundImage: `url("${PlanFolder.src}")` }}
+      >
+        <Box className={styles.planMiniHeader}>
+          <Box className={styles.planMiniHeaderText}>{title}</Box>
+        </Box>
+        <Box
+          className={styles.planPicture}
+          sx={{
+            background: `
+            url("${img}"),
+            lightgray 50% / cover no-repeat;
+            `,
+            transform: `rotate(${type ? -5 : 3}deg)`,
+          }}
           left={-2}
           top={-37}
-          rot={type ? -5 : 3}
         />
-        <Plan.PlanMiniDateText
-          className={Pretendard_Medium.className}
-        >{`${start} ~ ${end}`}</Plan.PlanMiniDateText>
-      </Plan.PlanMiniWrapper>
-      <Plan.MiniDeleteBox onClick={onClickDeleteButton} url={DeleteIcon.src}>
+        <p className={styles.planMiniDateText}>{`${start} ~ ${end}`}</p>
+      </Box>
+      <Box className={styles.miniDeleteBox} onClick={onClickDeleteButton}>
         <Image src={DeleteIcon.src} width={24} height={24} alt="삭제아이콘" />
-      </Plan.MiniDeleteBox>
-    </Plan.PlanBox>
+      </Box>
+    </Box>
   );
 };
 

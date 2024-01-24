@@ -1,7 +1,7 @@
 "use client";
 
 import { Modal } from "@mui/material";
-import AppStyle from "../app.style";
+import AppStyle from "../../../app.style";
 import {
   Pretendard_Bold,
   Pretendard_SemiBold,

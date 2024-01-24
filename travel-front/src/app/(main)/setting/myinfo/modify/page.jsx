@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Header from "@/app/_component/common/Header";
 import Footer from "@/app/_component/common/Footer";
-import Modal from "@/app/_component/ConfirmModal";
+import Modal from "@/app/_component/ui/Modal/ConfirmModal";
 import UserForm from "@/app/_component/ui/Frame/UserForm";
 
 import useUser from "@/hooks/useUser";

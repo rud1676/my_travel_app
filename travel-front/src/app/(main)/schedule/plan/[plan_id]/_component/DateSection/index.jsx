@@ -3,8 +3,10 @@
 import { useDraggable } from "react-use-draggable-scroll";
 import moment from "moment";
 import { useRef, useCallback, useEffect, useState } from "react";
-import { DateSectionWrapper, DateWrapper } from "../plandetail.style";
-import { Pretendard_Bold } from "@/assets/fonts/fonts";
+
+import styles from "./datesection.module.css";
+import { Box } from "@mui/material";
+
 import PlanDateBackground from "@/assets/img/PlanDateBackground.svg";
 import PlanDateBackgroundNone from "@/assets/img/PlanDateBackgroundNone.svg";
 
@@ -23,14 +25,15 @@ const OneDateComponent = ({
     setCurdate(date);
     ChnageDetials(travel, `20${date}`);
   }, [setCurdate, date, travel, ChnageDetials]);
+
   return (
-    <DateWrapper
+    <Box
+      className={styles.dateWrapper}
+      sx={{ backgroundImage: `url("${imgsrc}")` }}
       onClick={onClickOneDate}
-      className={Pretendard_Bold.className}
-      imgsrc={imgsrc}
     >
       {year}/{month}/{day}
-    </DateWrapper>
+    </Box>
   );
 };
 
@@ -60,7 +63,7 @@ const DateSection = ({
   const { events } = useDraggable(ref); // Now we pass the reference to the useDraggable hook:
 
   return (
-    <DateSectionWrapper {...events} ref={ref}>
+    <Box className={styles.dateSectionWrapper} {...events} ref={ref}>
       {dates.map((v) => {
         return (
           <OneDateComponent
@@ -74,7 +77,7 @@ const DateSection = ({
           />
         );
       })}
-    </DateSectionWrapper>
+    </Box>
   );
 };
 

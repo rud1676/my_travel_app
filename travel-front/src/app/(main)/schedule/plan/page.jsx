@@ -4,12 +4,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 
-import PlanStyle from "./plan.style";
+import styles from "./plan.module.css";
+import { Box } from "@mui/material";
 
 import Header from "@/app/_component/common/Header";
-import ConfirmModal from "@/app/_component/ConfirmModal";
+import ConfirmModal from "@/app/_component/ui/Modal/ConfirmModal";
 import Plans from "./_component/Plans";
-import SotringViewLayer from "./_component/SotringLayer";
+import SortingBox from "./_component/SortingBox";
 import useCustomMutate from "@/hooks/useCustomMutate";
 import { myPlanApi } from "@/api/myplan";
 
@@ -38,14 +39,14 @@ const Plan = () => {
           navigator.push("/schedule");
         }}
       />
-      <SotringViewLayer setMinView={setMinView} minView={minView} />
-      <PlanStyle.MainWrapper>
+      <SortingBox setMinView={setMinView} minView={minView} />
+      <Box className={styles.mainWrapper}>
         <Plans
           setModal={setModal}
           minView={minView}
           setDeleteid={setDeleteid}
         />
-      </PlanStyle.MainWrapper>
+      </Box>
       <ConfirmModal
         title="내 여행 삭제"
         content="정말로 삭제 하시겠습니까?"

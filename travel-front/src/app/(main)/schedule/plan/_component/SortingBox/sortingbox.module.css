@@ -1,0 +1,57 @@
+.sortingWrapper {
+  height: 42px;
+  margin: 4px 0;
+  display: flex;
+  gap: 10px;
+  padding: 0px 16px 0px 16px;
+  font-family: Pretendard;
+  font-weight: 700;
+}
+.sortingLayerWrapper {
+  height: 42px;
+  justify-content: space-between;
+  gap: 10px;
+  display: flex;
+  padding-right: 12px;
+  font-family: Pretendard;
+  font-weight: 400;
+}
+.sortingButton {
+  all: unset;
+  text-align: center;
+  color: white;
+  width: 82px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.minimalViewWrapper {
+  display: flex;
+  align-items: center;
+}
+.minimalText {
+  font-size: 12px;
+  font-style: normal;
+  line-height: normal;
+  margin-right: 9px;
+  font-family: Pretendard;
+  font-weight: 600;
+}
+.minimalSwitchBox {
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.minimalSwitchCircle {
+  height: 24px;
+  width: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
