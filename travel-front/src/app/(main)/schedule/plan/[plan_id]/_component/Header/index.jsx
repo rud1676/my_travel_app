@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Box } from "@mui/material";
-import { HeaderWrapper, TitleText, HeaderButton } from "../plandetail.style";
+import { Box, Typography } from "@mui/material";
+import styles from "./header.module.css";
+
+import { HeaderWrapper, TitleText, HeaderButton } from "../../plandetail.style";
 import { Pretendard_Medium } from "@/assets/fonts/fonts";
 import ArrowBackIcon from "@/assets/img/Arrow_Back.svg";
 import MoreIcon from "@/assets/img/MoreIcon.svg";
@@ -23,15 +25,15 @@ const Header = ({
   };
 
   return (
-    <HeaderWrapper>
-      <HeaderButton onClick={onClickBack}>
-        <Image width={17} height={29} src={ArrowBackIcon.src} alt="" />
-      </HeaderButton>
-      <TitleText className={Pretendard_Medium.className}>{`${
+    <Box className={styles.headerWrapper}>
+      <button className={styles.headerButton} onClick={onClickBack}>
+        <Image width={17} height={29} src={ArrowBackIcon.src} alt="뒤로가기" />
+      </button>
+      <Typography className={styles.titleText}>{`${
         isSetting && title.length >= 8 ? `${title.slice(0, 7)}...` : title
-      }${isSetting ? "(편집중..)" : ""}`}</TitleText>
-      <HeaderButton>
-        <Box sx={{ display: "flex", gap: "8px" }}>
+      }${isSetting ? "(편집중..)" : ""}`}</Typography>
+      <button className={styles.headerButton}>
+        <Box className={styles.headerRight}>
           {!isSetting && (
             <Image
               onClick={() => {
@@ -44,7 +46,7 @@ const Header = ({
               width={25}
               height={37}
               src={SettingIcon.src}
-              alt=""
+              alt="setting"
             />
           )}
           <Image
@@ -54,11 +56,11 @@ const Header = ({
             width={29}
             height={29}
             src={MoreIcon.src}
-            alt=""
+            alt="more"
           />
         </Box>
-      </HeaderButton>
-    </HeaderWrapper>
+      </button>
+    </Box>
   );
 };
 

@@ -1,0 +1,21 @@
+.inputTitleWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.inputLable {
+  font-size: 16px;
+  font-style: normal;
+  margin-right: 16px;
+  width: 56px;
+
+  font-weight: 400;
+  font-family: Pretendard;
+  line-height: normal;
+}
+
+.colorBox {
+  display: flex;
+  gap: 4px;
+}

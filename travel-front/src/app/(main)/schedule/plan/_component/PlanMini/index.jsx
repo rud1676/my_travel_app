@@ -7,10 +7,8 @@ import { useRouter } from "next/navigation";
 import { Box } from "@mui/material";
 import styles from "./planmini.module.css";
 
-import Plan from "../../plan.style";
 import PlanFolder from "@/assets/img/PlanFolder.svg";
 import DeleteIcon from "@/assets/img/DeleteIcon.svg";
-import { Pretendard_Bold, Pretendard_Medium } from "@/assets/fonts/fonts";
 
 const PlanMiniComponent = ({ onClickDeleteButton, type, plan }) => {
   const navigator = useRouter();

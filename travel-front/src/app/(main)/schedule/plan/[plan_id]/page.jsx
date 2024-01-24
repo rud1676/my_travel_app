@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 
 import Header from "./_component/Header";
 import Main from "./_component/Main";
 import DateSection from "./_component/DateSection";
-import Footer from "./_component/Footer";
+import Footer from "@/app/_component/common/Footer";
+
 import ConfirmModal from "@/app/_component/ui/Modal/ConfirmModal";
 import FooterDrawer from "./_component/FooterDrawer";
 
@@ -14,6 +16,7 @@ import { myPlanApi } from "@/api/myplan";
 import useCustomMutate from "@/hooks/useCustomMutate";
 const PlanDetail = ({ params }) => {
   const plan_id = parseInt(params.plan_id);
+  const navigator = useRouter();
 
   const [details, setDetails] = useState([]);
   const [curdate, setCurdate] = useState("");
@@ -31,14 +34,20 @@ const PlanDetail = ({ params }) => {
     refetchOnMount: "always",
   });
 
-  const mutate = useCustomMutate(
+  const deletemutate = useCustomMutate(
     ({ id }) => myPlanApi.deleteMyPlanDetail(id),
     "세부여행계획이 삭제되었습니다.",
     (_data) => `/`
   );
 
+  const ordermutate = useCustomMutate(
+    ({ data }) => myPlanApi.orderingDetails(data),
+    "순서 편집을 완료했습니다.",
+    (_data) => null
+  );
+
   const onClickDeleteButton = (planId) => {
-    mutate(planId);
+    deletemutate(planId);
   };
 
   const ChnageDetials = (plans, curD) => {
@@ -63,6 +72,14 @@ const PlanDetail = ({ params }) => {
   useEffect(() => {
     ChnageDetials(plan, curdate);
   }, [curdate, plan]);
+
+  const onClickFooter = (details) => {
+    if (isSetting) {
+      ordermutate(details);
+      setIsSetting(false);
+    } else navigator.push(`/schedule/plan/${plan.id}/make?day=20${curdate}`);
+  };
+
   return (
     <>
       <Header
@@ -89,11 +106,11 @@ const PlanDetail = ({ params }) => {
         setDelId={setDelId}
       />
       <Footer
-        setIsSetting={setIsSetting}
-        details={details}
-        isSetting={isSetting}
-        curdate={curdate}
-        plan={plan}
+        onClick={() => {
+          onClickFooter(details);
+        }}
+        backgroundColor="#6549ba"
+        child={isSetting ? "순서 적용하기" : "상세 일정 만들기"}
       />
       <ConfirmModal
         title="세부일정 순서 편집 취소"

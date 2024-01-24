@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react";
 
-import Make from "../make.style";
-import { Pretendard_ExtraBold } from "@/assets/fonts/fonts";
+import { Box } from "@mui/material";
+import styles from "./makemain.module.css";
 
-import InputDetailTitle from "./InputDetailTitle";
-import TagColor from "./TagColor";
-import InputLocation from "./InputLocation";
-import InputMemo from "./InputMemo";
-import InputTime from "./InputTime";
+import InputDetailTitle from "@/app/_component/ui/InputGroup/InputDetailTitle";
+import TagColor from "@/app/_component/ui/InputGroup/InputTagColor";
+import InputLocation from "@/app/_component/ui/InputGroup/InputLocation";
+import InputMemo from "@/app/_component/ui/InputGroup/InputMemo";
+import InputTime from "@/app/_component/ui/InputGroup/InputTime";
 
 const MakeDetail = ({ form, day, setForm, setMapOpen, mapOpen }) => {
   const [yeart, setYeart] = useState("");
@@ -28,15 +28,13 @@ const MakeDetail = ({ form, day, setForm, setMapOpen, mapOpen }) => {
   }, [day, form]);
 
   return (
-    <Make.MakeDetailWrapper>
-      <Make.TitleBox>
-        <Make.MonthDayText className={Pretendard_ExtraBold.className}>
+    <Box className={styles.makeDetailWrapper}>
+      <Box className={styles.titleBox}>
+        <p className={styles.monthDayText}>
           {montht}월 {datet}일
-        </Make.MonthDayText>
-        <Make.YearText className={Pretendard_ExtraBold.className}>
-          {yeart}
-        </Make.YearText>
-      </Make.TitleBox>
+        </p>
+        <p className={styles.yearText}>{yeart}</p>
+      </Box>
       <InputDetailTitle
         form={form}
         onChangeHandle={(e) => {
@@ -74,7 +72,7 @@ const MakeDetail = ({ form, day, setForm, setMapOpen, mapOpen }) => {
           });
         }}
       />
-    </Make.MakeDetailWrapper>
+    </Box>
   );
 };
 

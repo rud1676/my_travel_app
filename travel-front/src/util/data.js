@@ -56,6 +56,26 @@ import Type2LineSticker3 from "@/assets/img/Type2LineSticker3.svg";
 import Type2LineSticker4 from "@/assets/img/Type2LineSticker4.svg";
 import Type2LineSticker5 from "@/assets/img/Type2LineSticker5.svg";
 
+import WhiteCircle from "@/assets/img/WhiteCircle.svg";
+import PeachCircle from "@/assets/img/PeachCircle.svg";
+import YellowCircle from "@/assets/img/YellowCircle.svg";
+import GreenCircle from "@/assets/img/GreenCircle.svg";
+import SkyblueCircle from "@/assets/img/SkyblueCircle.svg";
+import PerwinkleCircle from "@/assets/img/PerwinkleCircle.svg";
+import PurpleCircle from "@/assets/img/PurpleCircle.svg";
+import PinkCircle from "@/assets/img/PinkCircle.svg";
+
+export const colors = [
+  { name: "white", src: WhiteCircle.src },
+  { name: "peach", src: PeachCircle.src },
+  { name: "yellow", src: YellowCircle.src },
+  { name: "green", src: GreenCircle.src },
+  { name: "skyblue", src: SkyblueCircle.src },
+  { name: "perwinkle", src: PerwinkleCircle.src },
+  { name: "perple", src: PurpleCircle.src },
+  { name: "pink", src: PinkCircle.src },
+];
+
 export const Type2LineStickers = [
   Type2LineSticker1.src,
   Type2LineSticker2.src,

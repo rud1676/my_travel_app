@@ -36,6 +36,7 @@ const MainFooter = () => {
             width={28}
             height={28}
             style={{ marginTop: "9px" }}
+            alt="이미지"
           />
         </FooterIconBox>
         <FooterIconBox
@@ -50,6 +51,7 @@ const MainFooter = () => {
             width={28}
             height={28}
             style={{ marginTop: "9px" }}
+            alt="이미지"
           />
         </FooterIconBox>
         <FooterIconBox
@@ -62,6 +64,7 @@ const MainFooter = () => {
             width={28}
             height={28}
             style={{ marginTop: "9px" }}
+            alt="이미지"
           />
         </FooterIconBox>
       </Box>

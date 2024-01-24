@@ -22,8 +22,13 @@ export const myPlanApi = {
     }
   },
 
-  orderingDetails: (details) => {
-    return axiosInstance.post(`/travel/myPlan/detail`, details);
+  orderingDetails: async (details) => {
+    try {
+      const res = await axiosInstance.post(`/travel/myPlan/detail`, details);
+      return res.data; // 데이터를 반환하도록 수정
+    } catch (error) {
+      throw error;
+    }
   },
 
   getDetailById: async (id) => {

@@ -6,7 +6,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 
 import Header from "@/app/_component/common/Header";
 import MakePageFooter from "./_component/MakePageFooter";
-import MakeDetail from "./_component/MakeDetail";
+import MakeMain from "./_component/MakeMain";
 import { myPlanApi } from "@/api/myplan";
 
 const Make = ({ params }) => {
@@ -21,7 +21,6 @@ const Make = ({ params }) => {
   const [form, setForm] = useState({});
   const [mapOpen, setMapOpen] = useState(false);
   const setFormData = (data) => {
-    console.log(data);
     setForm({
       title: data.title,
       color: data.color,
@@ -59,7 +58,7 @@ const Make = ({ params }) => {
         }}
         title="상세 일정 편집"
       />
-      <MakeDetail
+      <MakeMain
         form={form}
         setForm={setForm}
         day={day} // 수정에 필요한 값

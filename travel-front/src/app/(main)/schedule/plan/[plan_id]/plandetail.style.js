@@ -71,24 +71,4 @@ export const FooterWrapper = styled(Box)`
   line-height: normal;
 `;
 
-export const HeaderWrapper = styled(Box)`
-  width: 100%;
-  height: 96px;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-`;
-export const TitleText = styled(Typography)`
-  width: 75%;
-  text-align: center;
-  font-size: 24px;
-  font-style: normal;
-  line-height: normal;
-`;
-export const HeaderButton = styled.button`
-  all: unset;
-  cursor: pointer;
-  text-align: center;
-`;
-
 export default PlanDetail;

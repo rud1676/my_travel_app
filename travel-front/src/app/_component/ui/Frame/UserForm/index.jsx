@@ -11,6 +11,7 @@ import InputGender from "@/app/_component/ui/InputGroup/InputGender";
 import InputProfileImage from "@/app/_component/ui/InputGroup/InputProfileImage";
 
 const UserForm = ({ setForm, form }) => {
+  console.log(form);
   return (
     <Box className={styles.myInfoWrapper}>
       <InputProfileImage

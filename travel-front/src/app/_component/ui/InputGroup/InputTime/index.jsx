@@ -1,12 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Make from "../make.style";
-import {
-  Pretendard_Regular,
-  Pretendard_SemiBold,
-  Pretendard_ExtraBold,
-} from "@/assets/fonts/fonts";
+import styles from "./inputtime.module.css";
+import { Box, Typography } from "@mui/material";
 
 const TimeField = ({ v, setValue, title }) => {
   const onChangeValue = (e) => {
@@ -16,17 +12,15 @@ const TimeField = ({ v, setValue, title }) => {
     setValue(value);
   };
   return (
-    <Make.TimeInputWrapper>
-      <Make.TimeInputBox
+    <Box className={styles.timeInputWrapper}>
+      <input
         type="number"
         onChange={onChangeValue}
-        className={Pretendard_ExtraBold.className}
+        className={styles.timeInputBox}
         value={v}
       />
-      <Make.TimeInputText className={Pretendard_SemiBold.className}>
-        {title}
-      </Make.TimeInputText>
-    </Make.TimeInputWrapper>
+      <Typography className={styles.timeInputText}>{title}</Typography>
+    </Box>
   );
 };
 
@@ -49,13 +43,11 @@ const InputTime = ({ form, setForm }) => {
     });
   }, [forminute, formHour]);
   return (
-    <Make.InputTitleWrapper>
-      <Make.InputLable className={Pretendard_Regular.className}>
-        시간
-      </Make.InputLable>
+    <Box className={styles.inputTitleWrapper}>
+      <p className={styles.inputLable}>시간</p>
       <TimeField title="시" setValue={setFormHour} v={formHour} />
       <TimeField title="분" setValue={setForminute} v={forminute} />
-    </Make.InputTitleWrapper>
+    </Box>
   );
 };
 

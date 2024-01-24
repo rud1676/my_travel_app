@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Box } from "@mui/material";
 import styles from "./mainschedule.module.css";
 
-import GoogleMap from "../GoogleMap.jsx/index.jsx";
+import GoogleMap from "@/app/_component/common/GoogleMap";
 
 import FlightIcon from "@/assets/img/FlightIcon.svg";
 import CallIcon from "@/assets/img/CallIcon.svg";
@@ -62,8 +62,9 @@ const ScheduleComponent = ({ setMemo, setPhoneNum, plan }) => {
       </ScheduleFrame>
       {mapOpen && (
         <GoogleMap
-          location={plan.location}
-          placeName={plan.locationName}
+          readonly
+          form={plan}
+          setForm={null}
           mapOpen={mapOpen}
           setMapOpen={setMapOpen}
         />

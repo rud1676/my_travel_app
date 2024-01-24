@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import SchduleComponent from "../MainSchedule";
+import MainSchedule from "../MainSchedule";
 
 import { Box } from "@mui/material";
 import styles from "./main.module.css";
@@ -23,7 +23,7 @@ const Main = ({ setMemo, setPhoneNum, plans }) => {
     <Box className={styles.mainWrapper}>
       {plans.map((v) => {
         return (
-          <SchduleComponent
+          <MainSchedule
             setMemo={setMemo}
             setPhoneNum={setPhoneNum}
             key={v.id}
