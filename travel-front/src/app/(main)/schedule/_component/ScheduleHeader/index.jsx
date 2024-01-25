@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styles from "./scheduleheader.module.css";
 
 import ArrowBack from "@/assets/img/Arrow_Back_ios.svg";
@@ -19,10 +19,10 @@ const TravelInfo = ({ year, month, day, title, details }) => {
   return (
     <Box className={styles.headerBox}>
       <Box className={styles.dateTextWrapper}>
-        <p className={styles.dateBigText}>
+        <Typography className={styles.dateBigText}>
           {month}월 {day}일
-        </p>
-        <p className={styles.dateSmallText}>{year}</p>
+        </Typography>
+        <Typography className={styles.dateSmallText}>{year}</Typography>
       </Box>
       <button
         style={{ cursor: title !== "세부 일정 없음" && `cursor:pointer` }}

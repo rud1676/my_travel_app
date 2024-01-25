@@ -32,9 +32,9 @@
 }
 
 .scheduleTitle {
+  margin: auto 0;
   position: relative;
-  top: 13px;
-  font-size: 16px;
+  font-size: 17px;
   font-style: normal;
   line-height: normal;
   font-weight: 700;

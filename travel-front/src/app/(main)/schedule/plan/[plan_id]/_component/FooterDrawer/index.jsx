@@ -1,15 +1,18 @@
 "use client";
 
 import toast from "react-hot-toast";
+
+import { SwipeableDrawer, Typography } from "@mui/material";
+import styles from "./footerdrawer.module.css";
+
 import { useRouter } from "next/navigation";
-import PlanDetail from "../plandetail.style";
-import { Pretendard_SemiBold, Pretendard_Medium } from "@/assets/fonts/fonts";
 
 const FooterDrawer = ({ details, plan_id, open, setOpen }) => {
   const navigator = useRouter();
 
   return (
-    <PlanDetail.DrawFooterWrapper
+    <SwipeableDrawer
+      classes={{ paperAnchorBottom: styles.drawFooterWrapper }}
       anchor="bottom"
       open={open}
       onClose={() => {
@@ -19,19 +22,22 @@ const FooterDrawer = ({ details, plan_id, open, setOpen }) => {
         setOpen(true);
       }}
     >
-      <PlanDetail.DrawerOuterWrapper>
-        <PlanDetail.DrawerInnerWrapper>
-          <PlanDetail.ButtonWrapper
+      <Box className={styles.drawerOuterWrapper}>
+        <Box className={styles.drawerInnerWrapper}>
+          <Box
+            sx={{ borderRadius: "9px 9px 0px 0px" }}
+            className={styles.buttonWrapper}
             onClick={() => {
               navigator.push(`/schedule/plan/make?id=${plan_id}&step=0`);
             }}
-            rad="9px 9px 0px 0px"
           >
-            <PlanDetail.ButtonTitle className={Pretendard_Medium.className}>
+            <Typography className={styles.buttonTitle}>
               여행 제목 변경
-            </PlanDetail.ButtonTitle>
-          </PlanDetail.ButtonWrapper>
-          <PlanDetail.ButtonWrapper
+            </Typography>
+          </Box>
+          <Box
+            sx={{ borderRadius: "0px 0px 9px 9px" }}
+            className={styles.buttonWrapper}
             onClick={() => {
               if (details.length === 0) {
                 toast.remove();
@@ -42,24 +48,20 @@ const FooterDrawer = ({ details, plan_id, open, setOpen }) => {
                 );
               }
             }}
-            rad="0px 0px 9px 9px"
           >
-            <PlanDetail.ButtonTitle className={Pretendard_Medium.className}>
-              기간 변경
-            </PlanDetail.ButtonTitle>
-          </PlanDetail.ButtonWrapper>
-          <PlanDetail.CloseButtonWrapper
+            <Typography className={styles.buttonTitle}>기간 변경</Typography>
+          </Box>
+          <Box
+            className={styles.closeButtonWrapper}
             onClick={() => {
               setOpen(false);
             }}
           >
-            <PlanDetail.ButtonTitle className={Pretendard_SemiBold.className}>
-              닫기
-            </PlanDetail.ButtonTitle>
-          </PlanDetail.CloseButtonWrapper>
-        </PlanDetail.DrawerInnerWrapper>
-      </PlanDetail.DrawerOuterWrapper>
-    </PlanDetail.DrawFooterWrapper>
+            <Typography className={styles.buttonTitle}>닫기</Typography>
+          </Box>
+        </Box>
+      </Box>
+    </SwipeableDrawer>
   );
 };
 

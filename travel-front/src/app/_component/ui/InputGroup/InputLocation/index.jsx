@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 
 import { Box } from "@mui/material";
@@ -10,7 +10,6 @@ import GoogleMap from "@/app/_component/common/GoogleMap";
 import googleMapApi from "@/api/googleMap";
 
 const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
-  const mapRef = useRef();
   const [placeName, setPlaceName] = useState("");
 
   const onMapClick = async (event) => {
@@ -22,13 +21,15 @@ const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
       setPlaceName(data.results[0].formatted_address);
       let photo = "";
       if (data.results[0].photos) photo = data.results[0]?.photos[0].getUrl();
-      const temppoint = { latitude, longitude };
+      const temppoint = { lat: latitude, lng: longitude };
       setForm((prev) => {
         const temp = JSON.parse(JSON.stringify(prev));
 
         temp.locationName = data.results[0].formatted_address;
         temp.photo = photo;
         temp.location = temppoint;
+        console.log(temp);
+
         return temp;
       });
     }
@@ -39,6 +40,7 @@ const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
     if (!place) return;
     const phoneNumber = place?.international_phone_number;
     const address = place?.formatted_address;
+    setPlaceName(address);
     setForm((prev) => {
       const temp = JSON.parse(JSON.stringify(prev));
       temp.locationName = address;
@@ -57,15 +59,10 @@ const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
       temp.location = pos;
       temp.photo = photo;
       temp.phone = phoneNumber;
+      console.log(temp);
       return temp;
     });
   };
-
-  useEffect(() => {
-    if (mapOpen) mapRef.current.style.display = "block";
-    else mapRef.current.style.display = "none";
-    setPlaceName(form.locationName);
-  }, [mapOpen, form]);
 
   // location,  placeName,
   return (
@@ -92,7 +89,7 @@ const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
         mapOpen={mapOpen}
         form={form}
         setForm={setForm}
-        onPlacesChanged={onPlacesChanged}
+        onPlaceChanged={onPlacesChanged}
         onMapClick={onMapClick}
       />
     </Box>

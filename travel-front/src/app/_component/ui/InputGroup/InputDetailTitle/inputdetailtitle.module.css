@@ -15,15 +15,16 @@
   line-height: normal;
 }
 
-.timeInputBox {
+.titleInputBox {
   height: 55px;
-  width: 66px;
-  text-align: center;
-  font-size: 36px;
-  font-style: normal;
+  width: 73%;
+  font-size: 18px;
+  padding: 10px;
   line-height: normal;
   border-radius: 10px;
   background: #fff;
   border: 0px;
   margin-right: 4px;
+  font-weight: 500;
+  font-family: Pretendard;
 }

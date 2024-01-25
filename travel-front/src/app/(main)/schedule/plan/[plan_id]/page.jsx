@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSuspenseQuery } from "@tanstack/react-query";
+import { useSuspenseQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
 import Header from "./_component/Header";
@@ -15,6 +15,7 @@ import FooterDrawer from "./_component/FooterDrawer";
 import { myPlanApi } from "@/api/myplan";
 import useCustomMutate from "@/hooks/useCustomMutate";
 const PlanDetail = ({ params }) => {
+  const QueryClient = useQueryClient();
   const plan_id = parseInt(params.plan_id);
   const navigator = useRouter();
 
@@ -37,7 +38,12 @@ const PlanDetail = ({ params }) => {
   const deletemutate = useCustomMutate(
     ({ id }) => myPlanApi.deleteMyPlanDetail(id),
     "세부여행계획이 삭제되었습니다.",
-    (_data) => `/`
+    (_data) => {
+      QueryClient.refetchQueries({
+        queryKey: ["mytravel", plan_id],
+      });
+      return;
+    }
   );
 
   const ordermutate = useCustomMutate(
@@ -47,7 +53,7 @@ const PlanDetail = ({ params }) => {
   );
 
   const onClickDeleteButton = (planId) => {
-    deletemutate(planId);
+    deletemutate({ id: planId });
   };
 
   const ChnageDetials = (plans, curD) => {
@@ -135,6 +141,7 @@ const PlanDetail = ({ params }) => {
         open={modal}
         handleClose={() => setModal(false)}
         onClickConfirm={() => {
+          console.log(delId);
           onClickDeleteButton(delId);
           setModal(false);
         }}

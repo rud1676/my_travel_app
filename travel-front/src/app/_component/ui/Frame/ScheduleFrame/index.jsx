@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styles from "./scheduleframe.module.css";
+import { tagcolor, sticker } from "@/util/data";
 
 const degs = [5, 3, -5];
 
@@ -19,8 +20,8 @@ const ScheduleFrame = ({ plan, children, onClickSchedule }) => {
           : `${plan.title.slice(0, 30)}`
       );
       setPlaceName(
-        plan.locationName.length >= 8
-          ? `${plan.locationName.slice(0, 8)}...`
+        plan.locationName.length >= 16
+          ? `${plan.locationName.slice(0, 16)}...`
           : plan.locationName
       );
     } else {
@@ -57,15 +58,17 @@ const ScheduleFrame = ({ plan, children, onClickSchedule }) => {
           <Box
             className={styles.schedulePicture}
             sx={{
-              background: `url("${
-                plan.image ? plan.image.location : ""
-              }"), lightgray 50% / cover, no-repeat`,
+              background: plan.image ? `url("${plan.image.location}")` : "gray",
               transform: `rotate(${degs[plan.id % 3]}deg)`,
             }}
           />
           <Box className={styles.scheduleDetail}>
-            <p className={styles.scheduleTime}>{plan.time.slice(0, 5)}</p>
-            <p className={styles.schedulePlace}>{placeName}</p>
+            <Typography className={styles.scheduleTime}>
+              {plan.time.slice(0, 5)}
+            </Typography>
+            <Typography className={styles.schedulePlace}>
+              {placeName}
+            </Typography>
           </Box>
         </Box>
       </Box>

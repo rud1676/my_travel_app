@@ -25,11 +25,18 @@ const MapSearchComponent = ({
   onPlaceChanged,
 }) => {
   const [position, setPosition] = useState({ lat: 37.5665, lng: 126.978 });
+  const [center, setCenter] = useState({ lat: 37.5665, lng: 126.978 });
   useEffect(() => {
-    setPosition({
-      lat: form.location.coordinates[0],
-      lng: form.location.coordinates[1],
-    });
+    if (form?.location) {
+      setPosition({
+        lat: form.location.coordinates[0],
+        lng: form.location.coordinates[1],
+      });
+      setCenter({
+        lat: form.location.coordinates[0],
+        lng: form.location.coordinates[1],
+      });
+    }
   }, []);
 
   const searchBoxRef = useRef();
@@ -60,7 +67,7 @@ const MapSearchComponent = ({
             type="text"
             placeholder="Search location"
             className={styles.searchLocationInput}
-            value={form?.placeName ? form?.placeName : ""}
+            value={form?.locationName ? form?.locationName : ""}
             onChange={(e) => {
               setForm((prev) => {
                 const temp = JSON.parse(JSON.stringify(prev));
@@ -73,7 +80,7 @@ const MapSearchComponent = ({
       </StandaloneSearchBox>
       <GoogleMap
         options={{ mapTypeControl: false }}
-        center={position}
+        center={center}
         zoom={15}
         mapContainerStyle={{
           position: "fixed",
@@ -113,8 +120,6 @@ const GoogleMapComponent = ({
   setForm,
   form,
 }) => {
-  console.log(form);
-
   const mapRef = useRef();
   useEffect(() => {
     if (mapOpen) mapRef.current.style.display = "block";

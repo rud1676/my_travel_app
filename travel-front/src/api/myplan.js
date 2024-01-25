@@ -71,7 +71,7 @@ export const myPlanApi = {
       const res = await axiosInstance.post(`travel/myPlan`, data);
       return res.data;
     } catch (error) {
-      throw error;
+      throw new Error(error.response.data.message);
     }
   },
   modifyMyPlan: async (data, id) => {

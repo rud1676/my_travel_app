@@ -3,11 +3,15 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import Image from "next/image";
 
 import Header from "@/app/_component/common/Header";
-import MakePageFooter from "./_component/MakePageFooter";
+import Footer from "@/app/_component/common/Footer";
 import MakeMain from "./_component/MakeMain";
 import { myPlanApi } from "@/api/myplan";
+import { PlanDetailMakeValid } from "@/util/valid";
+import useCustomMutate from "@/hooks/useCustomMutate";
+import CheckIconWhite from "@/assets/img/CheckIconWhite.svg";
 
 const Make = ({ params }) => {
   const param = useSearchParams();
@@ -50,6 +54,40 @@ const Make = ({ params }) => {
     }, [detail]);
   }
 
+  const mutate = useCustomMutate(
+    ({ data, id }) => myPlanApi.createPlanDetail(data, id),
+    "수정 혹은 생성이 완료되었습니다.",
+    () => `/schedule/plan/${travelId}`
+  );
+
+  const onClickBottom = () => {
+    if (mapOpen) {
+      setMapOpen(false);
+      return;
+    }
+    if (PlanDetailMakeValid(form)) {
+      const formData = {
+        color: form.color,
+        memo: form.memo,
+        title: form.title,
+        location: form.location,
+        time: form.time,
+        locationName: form.locationName,
+        imgsrc: form.photo,
+        phoneNumber: form.phone,
+        date: day || form.date,
+      };
+
+      if (detail_id) {
+        formData.detailId = detail_id; // 수정하기 일시 사용.
+      } else if (travelId) {
+        formData.travelId = travelId;
+      }
+      console.log(formData);
+      mutate({ data: formData, id: travelId });
+    }
+  };
+
   return (
     <>
       <Header
@@ -65,13 +103,21 @@ const Make = ({ params }) => {
         mapOpen={mapOpen}
         setMapOpen={setMapOpen}
       />
-      <MakePageFooter
-        form={form}
-        setMapOpen={setMapOpen}
-        day={day}
-        detail_id={detail_id}
-        travelId={travelId}
-        mapOpen={mapOpen}
+      <Footer
+        onClick={onClickBottom}
+        child={
+          mapOpen ? (
+            "장소지정하기"
+          ) : (
+            <Image
+              width={59}
+              height={42}
+              src={CheckIconWhite.src}
+              alt="체크아이콘"
+            />
+          )
+        }
+        backgroundColor="#00ce9d"
       />
     </>
   );

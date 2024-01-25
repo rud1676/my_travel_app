@@ -8,7 +8,7 @@ const InputDetailTitle = ({ form, onChangeHandle }) => {
     <Box className={styles.inputTitleWrapper}>
       <p className={styles.inputLable}>일정제목</p>
       <input
-        className={styles.timeInputBox}
+        className={styles.titleInputBox}
         defaultValue={form.title}
         onChange={onChangeHandle}
       />
