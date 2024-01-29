@@ -92,7 +92,7 @@ const Make = ({ params }) => {
     <>
       <Header
         onClickBack={() => {
-          navigator.replace(`/schedule/plan/${travelId}`);
+          navigator.back();
         }}
         title="상세 일정 편집"
       />

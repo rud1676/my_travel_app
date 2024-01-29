@@ -58,14 +58,8 @@ export const myPlanApi = {
   getDetailByIdAndDay: (id, day) => {
     return axiosInstance.get(`/travel/myPlan/${id}/detail?date=${day}`);
   },
-  getDetailListByDay: async (day) => {
-    try {
-      const res = await axiosInstance.get(`/travel/myPlan/day/${day}`);
-      return res.data;
-    } catch (error) {
-      throw error;
-    }
-  },
+  getDetailListByDay: (day) => axiosInstance.get(`/travel/myPlan/day/${day}`),
+
   createMyPlan: async (data) => {
     try {
       const res = await axiosInstance.post(`travel/myPlan`, data);

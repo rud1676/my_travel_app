@@ -17,9 +17,9 @@ const Schedule = () => {
   const { data: plan } = useQuery({
     queryKey: ["plan", `${year}-${month + 1}-${day}`],
     queryFn: () => myPlanApi.getDetailListByDay(`${year}-${month + 1}-${day}`),
-    enabled: false,
+    enabled: true,
+    retry: false,
   });
-
   const [phoneNum, setPhoneNum] = useState(null);
   const [memo, setMemo] = useState("");
   return (
@@ -32,6 +32,7 @@ const Schedule = () => {
         title={plan?.title ? plan.title : "세부 일정 없음"}
       />
       <Main
+        planid={plan?.id}
         plans={plan?.details ? plan.details : []}
         setPhoneNum={setPhoneNum}
         setMemo={setMemo}

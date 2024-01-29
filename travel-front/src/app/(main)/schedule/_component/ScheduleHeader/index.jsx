@@ -13,7 +13,7 @@ const TravelInfo = ({ year, month, day, title, details }) => {
 
   const onClickPlan = () => {
     if (title !== "세부 일정 없음" && details)
-      navigator.push(`/plandetail?id=${details.id}`);
+      navigator.push(`/schedule/plan/${details.id}`);
   };
 
   return (
@@ -25,11 +25,11 @@ const TravelInfo = ({ year, month, day, title, details }) => {
         <Typography className={styles.dateSmallText}>{year}</Typography>
       </Box>
       <button
-        style={{ cursor: title !== "세부 일정 없음" && `cursor:pointer` }}
+        style={{ cursor: title !== "세부 일정 없음" && `pointer` }}
         className={styles.planButton}
         onClick={onClickPlan}
       >
-        <p className={styles.detailText}>{title}</p>
+        <Typography className={styles.detailText}>{title}</Typography>
         {title !== "세부 일정 없음" && (
           <Image alt="뒤로가기" src={ArrowBack} width={13} height={15} />
         )}

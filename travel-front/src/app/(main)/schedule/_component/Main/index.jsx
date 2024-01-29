@@ -11,7 +11,7 @@ import styles from "./main.module.css";
 import MyTravelList from "@/assets/img/MyTravelList.svg";
 import NewTravelMake from "@/assets/img/NewTravelMake.svg";
 
-const Main = ({ setMemo, setPhoneNum, plans }) => {
+const Main = ({ planid, setMemo, setPhoneNum, plans }) => {
   const navigator = useRouter();
   const onClickMakePlan = () => {
     navigator.push("/schedule/plan/make");
@@ -24,6 +24,7 @@ const Main = ({ setMemo, setPhoneNum, plans }) => {
       {plans.map((v) => {
         return (
           <MainSchedule
+            planid={planid}
             setMemo={setMemo}
             setPhoneNum={setPhoneNum}
             key={v.id}

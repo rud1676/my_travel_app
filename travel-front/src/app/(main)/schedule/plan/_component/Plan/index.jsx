@@ -69,7 +69,7 @@ const PlanComponent = ({ onClickDeleteButton, plan }) => {
             <Box
               className={styles.stickerWrapper}
               sx={{
-                backgroundImage: `url("${PlanSticker[plan.id % 5]}"`,
+                backgroundImage: `url("${PlanSticker[plan.id % 5]}")`,
                 transform: `rotate(-10.721deg)`,
               }}
               left={15}
@@ -81,7 +81,7 @@ const PlanComponent = ({ onClickDeleteButton, plan }) => {
             <Box
               className={styles.stickerWrapper}
               sx={{
-                backgroundImage: `url("${PlanSticker[(plan.id + 1) % 5]}"`,
+                backgroundImage: `url("${PlanSticker[(plan.id + 1) % 5]}")`,
                 transform: `rotate(15.413deg)`,
               }}
               left={95}
@@ -97,10 +97,7 @@ const PlanComponent = ({ onClickDeleteButton, plan }) => {
             <Box
               className={styles.planPicture}
               sx={{
-                background: `
-            url("${img}"),
-            lightgray 50% / cover no-repeat;
-            `,
+                backgroundImage: `url("${img}")`,
               }}
               left={175}
               top={-410}
@@ -131,7 +128,7 @@ const PlanComponent = ({ onClickDeleteButton, plan }) => {
             <Box
               className={styles.stickerWrapper}
               sx={{
-                backgroundImage: `url("${PlanSticker[(plan.id + 1) % 5]}"`,
+                backgroundImage: `url("${PlanSticker[(plan.id + 1) % 5]}")`,
                 transform: `rotate(-10.721deg)`,
               }}
               left={165}
@@ -143,7 +140,7 @@ const PlanComponent = ({ onClickDeleteButton, plan }) => {
             <Box
               className={styles.stickerWrapper}
               sx={{
-                backgroundImage: `url("${PlanSticker[plan.id % 5]}"`,
+                backgroundImage: `url("${PlanSticker[plan.id % 5]}")`,
                 transform: `rotate(0deg)`,
               }}
               left={244}
@@ -152,7 +149,6 @@ const PlanComponent = ({ onClickDeleteButton, plan }) => {
             >
               {end}
             </Box>
-            background-image:
             <Box
               className={styles.lineBoxType2}
               sx={{
@@ -162,10 +158,7 @@ const PlanComponent = ({ onClickDeleteButton, plan }) => {
             <Box
               className={styles.planPicture}
               sx={{
-                background: `
-            url("${img}"),
-            lightgray 50% / cover no-repeat;
-            `,
+                backgroundImage: `url("${img}")`,
                 transform: `rotate(-3deg)`,
               }}
               left={25}

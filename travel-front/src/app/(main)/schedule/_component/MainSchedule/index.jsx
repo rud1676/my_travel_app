@@ -16,12 +16,12 @@ import MemoIcon from "@/assets/img/MemoIcon.svg";
 
 import ScheduleFrame from "@/app/_component/ui/Frame/ScheduleFrame";
 
-const ScheduleComponent = ({ setMemo, setPhoneNum, plan }) => {
+const ScheduleComponent = ({ planid, setMemo, setPhoneNum, plan }) => {
   const navigator = useRouter();
 
   const [mapOpen, setMapOpen] = useState(false);
   const onClickDetailPlan = () => {
-    navigator.replace(`/plandetail/make?id=${plan.id}`);
+    navigator.replace(`/schedule/plan/${planid}/make?id=${plan.id}`);
   };
   return (
     <>

@@ -91,5 +91,7 @@
   height: 30px;
   position: relative;
   gap: 7px;
-  top: 50px;
+  justify-content: right;
+  margin-right: 10px;
+  top: -60px;
 }

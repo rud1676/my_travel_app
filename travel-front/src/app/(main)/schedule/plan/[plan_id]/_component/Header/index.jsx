@@ -5,8 +5,6 @@ import { useRouter } from "next/navigation";
 import { Box, Typography } from "@mui/material";
 import styles from "./header.module.css";
 
-import { HeaderWrapper, TitleText, HeaderButton } from "../../plandetail.style";
-import { Pretendard_Medium } from "@/assets/fonts/fonts";
 import ArrowBackIcon from "@/assets/img/Arrow_Back.svg";
 import MoreIcon from "@/assets/img/MoreIcon.svg";
 import SettingIcon from "@/assets/img/SettingIcon.svg";

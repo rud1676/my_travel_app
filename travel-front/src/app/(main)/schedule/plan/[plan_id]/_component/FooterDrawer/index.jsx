@@ -2,7 +2,7 @@
 
 import toast from "react-hot-toast";
 
-import { SwipeableDrawer, Typography } from "@mui/material";
+import { SwipeableDrawer, Typography, Box } from "@mui/material";
 import styles from "./footerdrawer.module.css";
 
 import { useRouter } from "next/navigation";

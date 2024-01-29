@@ -1,12 +1,7 @@
 "use client";
 
-import { Modal } from "@mui/material";
-import AppStyle from "../../../app.style";
-import {
-  Pretendard_Bold,
-  Pretendard_SemiBold,
-  Pretendard_Regular,
-} from "@/assets/fonts/fonts";
+import { Modal, Box, Typography } from "@mui/material";
+import styles from "./modal.module.css";
 
 const ConfirmModal = ({
   title = "세부 일정 삭제",
@@ -24,31 +19,23 @@ const ConfirmModal = ({
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <AppStyle.ModalWrapper>
-        <AppStyle.ModalContent>
-          <AppStyle.ModalTitle className={Pretendard_Bold.className}>
-            {title}
-          </AppStyle.ModalTitle>
-          <AppStyle.ModalSubTtitle
-            className={Pretendard_Regular.className}
+      <Box className={styles.modalWrapper}>
+        <Box className={styles.modalContent}>
+          <Typography className={styles.modalTitle}>{title}</Typography>
+          <Typography
+            className={styles.modalSubTtitle}
             dangerouslySetInnerHTML={{ __html: content }}
-          ></AppStyle.ModalSubTtitle>
-        </AppStyle.ModalContent>
-        <AppStyle.ButtonWrapper>
-          <AppStyle.ConfirmButton
-            className={Pretendard_Regular.className}
-            onClick={handleClose}
-          >
+          ></Typography>
+        </Box>
+        <Box className={styles.buttonWrapper}>
+          <Button className={styles.confirmButton} onClick={handleClose}>
             {calcelText}
-          </AppStyle.ConfirmButton>
-          <AppStyle.CloseButton
-            className={Pretendard_SemiBold.className}
-            onClick={onClickConfirm}
-          >
+          </Button>
+          <Button className={styles.closeButton} onClick={onClickConfirm}>
             {confirmText}
-          </AppStyle.CloseButton>
-        </AppStyle.ButtonWrapper>
-      </AppStyle.ModalWrapper>
+          </Button>
+        </Box>
+      </Box>
     </Modal>
   );
 };

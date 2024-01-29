@@ -19,9 +19,6 @@ export const globalApi = {
       throw error;
     }
   },
-  profile: () => {
-    return axiosInstance.get("/profile");
-  },
   withdraw: () => {
     return axiosInstance.delete("/withdraw");
   },

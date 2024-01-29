@@ -7,7 +7,9 @@ import { usePathname } from "next/navigation";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { Toaster } from "react-hot-toast";
-import AppStyle from "../../app.style";
+import { Box } from "@mui/material";
+
+import styles from "./appcontainer.module.css";
 
 let theme = createTheme({
   typography: {
@@ -48,7 +50,6 @@ theme = createTheme({
 
 const AppContainer = ({ children }) => {
   const pathname = usePathname();
-  const bgColor = pathname === "/login" ? "#6549BA" : "#f0f0f0";
   const queryClientRef = useRef();
   if (!queryClientRef.current) {
     queryClientRef.current = new QueryClient({
@@ -64,9 +65,14 @@ const AppContainer = ({ children }) => {
       <Toaster containerStyle={{ top: "100px" }} />
       <CssBaseline>
         <QueryClientProvider client={queryClientRef.current}>
-          <AppStyle.AppWrapper bgcolor={bgColor}>
+          <Box
+            className={styles.appWrapper}
+            sx={{
+              backgroundColor: pathname === "/login" ? "#6549BA" : "#f0f0f0",
+            }}
+          >
             {children}
-          </AppStyle.AppWrapper>
+          </Box>
           <ReactQueryDevtools initialIsOpen={true} />
         </QueryClientProvider>
       </CssBaseline>
