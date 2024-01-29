@@ -29,7 +29,6 @@ const MyInfoModifyPage = () => {
   );
 
   const onClickModify = (form, id) => {
-    console.log(form);
     if (
       ModifyUserValid({
         name: form.name,

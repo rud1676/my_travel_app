@@ -211,9 +211,7 @@ export const Menus = (navigator) => {
                 await globalApi.withdraw();
                 LocalSave.setToken("");
                 navigator.push("/");
-              } catch (err) {
-                console.log(err);
-              }
+              } catch (err) {}
             }
           },
         },

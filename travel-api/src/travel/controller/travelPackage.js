@@ -347,7 +347,6 @@ module.exports.reserve = async (req, res) => {
       id: travelPackageOptionId
     }
   });
-  console.log('param', req.params);
   const result = await models.ReservedTravelPackage.create({
     userId: req.user.id,
     travelPackageId: id,
@@ -399,7 +398,6 @@ module.exports.reserveConfirm = async (req, res) => {
 
   const { status } = req.body;
 
-  console.log(status);
   await models.ReservedTravelPackage.update(
     {
       status

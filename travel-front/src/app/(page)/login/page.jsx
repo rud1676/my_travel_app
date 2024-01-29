@@ -14,7 +14,6 @@ import KakaoLoginIcon from "@/assets/img/KakaoLogin.svg";
 import { KakaoAPIKey } from "@/util/keys";
 
 const LoginPage = () => {
-  console.log(KakaoAPIKey);
   const initNaver = () => {
     // eslint-disable-next-line new-cap
     const naverLogin = new window.naver_id_login(

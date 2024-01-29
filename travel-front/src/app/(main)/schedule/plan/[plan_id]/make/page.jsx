@@ -83,7 +83,6 @@ const Make = ({ params }) => {
       } else if (travelId) {
         formData.travelId = travelId;
       }
-      console.log(formData);
       mutate({ data: formData, id: travelId });
     }
   };

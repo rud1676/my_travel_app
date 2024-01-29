@@ -23,7 +23,7 @@ export const MakeFormData = ({
   formData.append("birth", birth);
   formData.append("gender", gender);
   formData.append("image", file);
-  if (snsId) formData.append("snsId", file);
+  if (snsId) formData.append("snsId", snsId);
   if (provider) formData.append("provider", provider);
   return formData;
 };

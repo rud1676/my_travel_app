@@ -28,7 +28,6 @@ const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
         temp.locationName = data.results[0].formatted_address;
         temp.photo = photo;
         temp.location = temppoint;
-        console.log(temp);
 
         return temp;
       });
@@ -59,7 +58,6 @@ const InputDetailTitle = ({ setMapOpen, mapOpen, setForm, form }) => {
       temp.location = pos;
       temp.photo = photo;
       temp.phone = phoneNumber;
-      console.log(temp);
       return temp;
     });
   };

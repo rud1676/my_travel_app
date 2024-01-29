@@ -141,7 +141,6 @@ const PlanDetail = ({ params }) => {
         open={modal}
         handleClose={() => setModal(false)}
         onClickConfirm={() => {
-          console.log(delId);
           onClickDeleteButton(delId);
           setModal(false);
         }}

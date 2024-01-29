@@ -50,8 +50,6 @@ export const CheckMakeTravelTitle = (title) => {
 };
 
 export const ModifyUserValid = ({ name, birth }) => {
-  console.log(name, birth);
-  console.log(birth.split("-")[0].length);
   if (name.length === 0) {
     toast.error("이름을 입력해주세요!");
     return false;

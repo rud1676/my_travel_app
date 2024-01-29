@@ -96,7 +96,6 @@ module.exports.update = async (req, res) => {
   const { name, email, phone, birth, gender } = req.body;
   let imageId;
   if (req.file) {
-    console.log(req.file);
     const attachment = await models.Attachment.create({
       originalname: req.file.originalname,
       key: req.file.key,

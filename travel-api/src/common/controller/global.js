@@ -42,7 +42,7 @@ module.exports.join = async (req, res) => {
 // sns 회원가입
 module.exports.snsJoin = async (req, res) => {
   const { phone, name, email, provider, snsId, birth, gender } = req.body;
-
+  console.log(req.body);
   const findUser = await models.User.findOne({
     where: { provider, snsId }
   });
@@ -211,7 +211,7 @@ module.exports.kakaoLogin = async (req, res) => {
     const {
       data: { access_token }
     } = await axios.post(
-      `https://kauth.kakao.com/oauth/token?grant_type=${grantType}&client_id=${clientId}&code=${s}`,
+      `https://kauth.kakao.com/oauth/token?grant_type=${grantType}&client_id=${clientId}&code=${code}`,
       {
         headers: {
           'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -224,7 +224,7 @@ module.exports.kakaoLogin = async (req, res) => {
         Authorization: `Bearer ${access_token}`
       }
     });
-
+    console.log(data);
     const { id: snsId } = data;
 
     const findUser = await models.User.findOne({
