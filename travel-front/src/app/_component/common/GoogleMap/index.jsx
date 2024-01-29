@@ -14,6 +14,8 @@ import {
 } from "@react-google-maps/api";
 import ArrowBack from "@/assets/img/Arrow_Back.svg";
 
+import googleMapApi from "@/api/googleMap";
+
 const libraries = ["places"];
 
 const MapSearchComponent = ({
@@ -42,10 +44,7 @@ const MapSearchComponent = ({
   const searchBoxRef = useRef();
 
   return (
-    <LoadScript
-      googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
-      libraries={libraries}
-    >
+    <LoadScript googleMapsApiKey={googleMapApi} libraries={libraries}>
       <StandaloneSearchBox
         onLoad={(ref) => (searchBoxRef.current = ref)}
         onPlacesChanged={() => {

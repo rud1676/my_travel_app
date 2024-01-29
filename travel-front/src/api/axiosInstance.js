@@ -2,10 +2,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { redirect } from "next/navigation";
 
-import { DEV_API_URL } from "./index";
-
 const axiosInstance = axios.create({
-  baseURL: `${DEV_API_URL}`,
+  baseURL: `${process.env.NEXT_PUBLIC_API_URL || `//localhost:4311`}/api`,
   headers: {
     "Content-Type": "application/json",
     "Cache-Control": "no-cache", // 서버에서 설정했었도 클라이언트에서 이 설정을 안하니깐 디스크 캐시가 발생함

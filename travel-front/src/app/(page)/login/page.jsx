@@ -11,9 +11,10 @@ import SinesText from "@/assets/img/SinesTourText.svg";
 import NaverLoginIcon from "@/assets/img/NaverLogin.svg";
 import KakaoLoginIcon from "@/assets/img/KakaoLogin.svg";
 
-const LoginPage = () => {
-  const KAKAO_CLIENT_ID = "1fc3317ebc6570d452cc9e17aea6ccc8";
+import { KakaoAPIKey } from "@/util/keys";
 
+const LoginPage = () => {
+  console.log(KakaoAPIKey);
   const initNaver = () => {
     // eslint-disable-next-line new-cap
     const naverLogin = new window.naver_id_login(
@@ -46,7 +47,7 @@ const LoginPage = () => {
         <Login.KakaoLoginBox
           onClick={() => {
             const REDIRECT_URI = `${window.location.origin}/login/callback/kakao`;
-            const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+            const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KakaoAPIKey}&redirect_uri=${REDIRECT_URI}&response_type=code`;
             window.location.href = KAKAO_AUTH_URL;
           }}
         >

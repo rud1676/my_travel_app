@@ -205,13 +205,13 @@ module.exports.modifyProfile = async (req, res) => {
 module.exports.kakaoLogin = async (req, res) => {
   const { code } = req.body;
   const grantType = 'authorization_code';
-  const clientId = '1fc3317ebc6570d452cc9e17aea6ccc8';
+  const clientId = process.env.KAKAO_KEY;
 
   try {
     const {
       data: { access_token }
     } = await axios.post(
-      `https://kauth.kakao.com/oauth/token?grant_type=${grantType}&client_id=${clientId}&code=${code}`,
+      `https://kauth.kakao.com/oauth/token?grant_type=${grantType}&client_id=${clientId}&code=${s}`,
       {
         headers: {
           'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'

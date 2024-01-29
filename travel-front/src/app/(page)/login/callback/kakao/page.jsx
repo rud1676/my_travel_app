@@ -14,6 +14,7 @@ const KaKaoLogin = () => {
         const params = new URL(document.location.toString()).searchParams;
         const code = params.get("code"); // 인가코드 받는 부분
         const { data } = await globalApi.kakaoLogin({ code });
+        console.log(data);
         if (data.isJoin) {
           setToken(data.token);
           LocalSave.setToken(data.token);

@@ -1,6 +1,7 @@
-export const APIKEY = "AIzaSyCcH7dm5y1_YuHJXFPrclQy_SPH9P6Lx2U";
+import { GoogleMapAPIKey } from "@/util/keys";
+
 const FetchUrl = (point) =>
-  `https://maps.googleapis.com/maps/api/geocode/json?latlng=${point.latitude},${point.longitude}&key=${APIKEY}`;
+  `https://maps.googleapis.com/maps/api/geocode/json?latlng=${point.latitude},${point.longitude}&key=${GoogleMapAPIKey}`;
 
 const googleMapApi = {
   resData: async (point) => {
