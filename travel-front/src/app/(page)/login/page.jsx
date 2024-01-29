@@ -3,6 +3,9 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { Global, css } from "@emotion/react";
+import { Box, Typography } from "@mui/material";
+
+import styles from "./login.module.css";
 
 import Login from "@/app/(page)/login/login.style";
 import Header from "@/app/_component/common/Header";
@@ -28,7 +31,7 @@ const LoginPage = () => {
   }, []);
 
   return (
-    <Login.LoginWrapper>
+    <Box className={styles.loginWrapper}>
       <Global
         styles={css`
           body {
@@ -38,12 +41,24 @@ const LoginPage = () => {
       />
       <Header title="로그인" color="white" onClickBack={() => {}} />
 
-      <Login.LogoBox>
-        <Login.LogoImg src={LoginLogo.src} />
-        <Login.CinesImg src={SinesText.src} />
-      </Login.LogoBox>
-      <Login.LoginBox>
-        <Login.KakaoLoginBox
+      <Box className={styles.logoBox}>
+        <Image
+          className={styles.logoImg}
+          width={111}
+          height={144}
+          alt="그냥 로고"
+          src={LoginLogo.src}
+        />
+        <Image
+          width={140}
+          height={59}
+          alt="시네스택스트로고"
+          src={SinesText.src}
+        />
+      </Box>
+      <Box className={styles.loginBox}>
+        <Box
+          className={styles.kakaoLoginBox}
           onClick={() => {
             const REDIRECT_URI = `${window.location.origin}/login/callback/kakao`;
             const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KakaoAPIKey}&redirect_uri=${REDIRECT_URI}&response_type=code`;
@@ -56,9 +71,10 @@ const LoginPage = () => {
             alt="카카오로고"
             src={KakaoLoginIcon.src}
           />
-          <Login.LoginText>카카오 시작하기</Login.LoginText>
-        </Login.KakaoLoginBox>
-        <Login.NaverLoginBox
+          <Typography className={styles.loginText}>카카오 시작하기</Typography>
+        </Box>
+        <Box
+          className={styles.naverLoginBox}
           onClick={() => {
             document.getElementById("naver_id_login").firstChild.click();
           }}
@@ -69,10 +85,12 @@ const LoginPage = () => {
             alt="네이버로고"
             src={NaverLoginIcon.src}
           />
-          <Login.LoginText naver="true">네이버 시작하기</Login.LoginText>
-        </Login.NaverLoginBox>
-      </Login.LoginBox>
-    </Login.LoginWrapper>
+          <Typography sx={{ color: "white" }} className={styles.loginText}>
+            네이버 시작하기
+          </Typography>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

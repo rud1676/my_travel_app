@@ -1,0 +1,71 @@
+.logoBox {
+  margin: 46px auto 0 auto;
+  width: 111px;
+}
+
+.loginWrapper {
+  text-align: center;
+}
+
+.logoImg {
+  margin-bottom: 3px;
+}
+
+.naverLoginBox {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: auto;
+  width: 300px;
+  height: 52px;
+  background: #00c73c;
+  cursor: pointer;
+}
+.loginText {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.kakaoLoginBox {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 300px;
+  height: 52px;
+  background: #fee500;
+  margin: 0px auto 19px auto;
+}
+.loginBox {
+  margin-top: 139px;
+}
+/*
+
+RegistBox: styled(Box)`
+width: 300px;
+display: flex;
+justify-content: space-between;
+margin: 50px auto;
+`,
+
+RegistText: styled(Typography)`
+color: #fff;
+font-size: 14px;
+font-style: normal;
+line-height: normal;
+`,
+
+RegistButton: styled(Box)`
+display: flex;
+align-items: center;
+gap: 6px;
+cursor: pointer;
+color: #fff;
+
+font-size: 14px;
+font-style: normal;
+line-height: normal;
+`,
+*/
