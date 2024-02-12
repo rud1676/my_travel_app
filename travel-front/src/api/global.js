@@ -7,6 +7,16 @@ export const globalApi = {
   kakaoLogin: (info) => {
     return axiosInstance.post("/login/kakao", info);
   },
+  emailJoin: async (info) => {
+    try {
+      const res = await axiosInstance.post("/join", info, {
+        headers: {},
+      });
+      return res.data; // 데이터를 반환하도록 수정
+    } catch (error) {
+      throw error;
+    }
+  },
   snsJoin: async (info) => {
     try {
       const res = await axiosInstance.post("/join/sns", info, {
@@ -22,8 +32,14 @@ export const globalApi = {
   withdraw: () => {
     return axiosInstance.delete("/withdraw");
   },
-  localLogin: (info) => {
-    return axiosInstance.post("/login", info);
+  localLogin: async (info) => {
+    try {
+      console.log(info);
+      const res = await axiosInstance.post("/login", info, {});
+      return res.data; // 데이터를 반환하도록 수정
+    } catch (error) {
+      throw error;
+    }
   },
   profileDetail: (id) => {
     return axiosInstance.get(`/users/${id}`);

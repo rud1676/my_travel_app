@@ -1,14 +1,17 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Global, css } from "@emotion/react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Modal, Button } from "@mui/material";
 
 import styles from "./login.module.css";
 
-import Login from "@/app/(page)/login/login.style";
 import Header from "@/app/_component/common/Header";
+import InputLabel from "@/app/_component/ui/InputGroup/InputLabel";
+import useCustomMutate from "@/hooks/useCustomMutate";
+
 import LoginLogo from "@/assets/img/LoginLogo.svg";
 import SinesText from "@/assets/img/SinesTourText.svg";
 import NaverLoginIcon from "@/assets/img/NaverLogin.svg";
@@ -16,7 +19,23 @@ import KakaoLoginIcon from "@/assets/img/KakaoLogin.svg";
 
 import { KakaoAPIKey } from "@/util/keys";
 
+import { globalApi, setToken } from "@/api/global";
+import { LocalSave } from "@/LocalSave";
 const LoginPage = () => {
+  const navigator = useRouter();
+  const [open, setOpen] = useState(false);
+  const [loginForm, setLoginForm] = useState({ user: "", password: "" });
+
+  const loginMutate = useCustomMutate(
+    ({ formData }) => globalApi.localLogin(formData),
+    "로그인이 완료되었습니다.",
+    (data) => {
+      LocalSave.setToken(data.token);
+      setToken(data.token);
+      return `/`;
+    }
+  );
+
   const initNaver = () => {
     // eslint-disable-next-line new-cap
     const naverLogin = new window.naver_id_login(
@@ -89,7 +108,69 @@ const LoginPage = () => {
             네이버 시작하기
           </Typography>
         </Box>
+        <Box
+          className={styles.emailLogin}
+          onClick={() => {
+            setOpen(true);
+          }}
+        >
+          <Typography sx={{ color: "white" }} className={styles.loginText}>
+            이메일로 시작하기
+          </Typography>
+        </Box>
       </Box>
+      <Modal
+        open={open}
+        onClose={() => {
+          setOpen(false);
+        }}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className={styles.loginModal}>
+          <form>
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{ marginBottom: 2 }}
+            >
+              로그인 팝업
+            </Typography>
+            <InputLabel
+              setForm={setLoginForm}
+              field="email"
+              placeholder="이메일을 입력하세요"
+              title="이메일"
+            />
+            <InputLabel
+              setForm={setLoginForm}
+              field="password"
+              placeholder="패스워드를 입력하세요"
+              title="패스워드"
+              password
+            />
+            <Box>
+              <Button
+                onClick={() => {
+                  loginMutate({
+                    formData: loginForm,
+                  });
+                }}
+              >
+                로그인
+              </Button>
+              <Button
+                onClick={() => {
+                  navigator.push("/regist");
+                }}
+              >
+                회원가입
+              </Button>
+            </Box>
+          </form>
+        </Box>
+      </Modal>
     </Box>
   );
 };

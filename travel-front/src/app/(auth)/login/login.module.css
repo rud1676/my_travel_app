@@ -2,6 +2,18 @@
   margin: 46px auto 0 auto;
   width: 111px;
 }
+.loginModal {
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: white;
+  border: 2px solid #000;
+  box-shadow: 24;
+  border-radius: 20px;
+}
 
 .loginWrapper {
   text-align: center;
@@ -9,6 +21,18 @@
 
 .logoImg {
   margin-bottom: 3px;
+}
+
+.emailLogin {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 19px auto 0 auto;
+  width: 300px;
+  height: 52px;
+  background: gray;
+  cursor: pointer;
 }
 
 .naverLoginBox {
@@ -41,31 +65,3 @@
 .loginBox {
   margin-top: 139px;
 }
-/*
-
-RegistBox: styled(Box)`
-width: 300px;
-display: flex;
-justify-content: space-between;
-margin: 50px auto;
-`,
-
-RegistText: styled(Typography)`
-color: #fff;
-font-size: 14px;
-font-style: normal;
-line-height: normal;
-`,
-
-RegistButton: styled(Box)`
-display: flex;
-align-items: center;
-gap: 6px;
-cursor: pointer;
-color: #fff;
-
-font-size: 14px;
-font-style: normal;
-line-height: normal;
-`,
-*/

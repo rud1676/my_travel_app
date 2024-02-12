@@ -10,7 +10,7 @@ import InputBirth from "@/app/_component/ui/InputGroup/InputBirth";
 import InputGender from "@/app/_component/ui/InputGroup/InputGender";
 import InputProfileImage from "@/app/_component/ui/InputGroup/InputProfileImage";
 
-const UserForm = ({ setForm, form }) => {
+const UserForm = ({ setForm, form, snsId }) => {
   return (
     <Box className={styles.myInfoWrapper}>
       <InputProfileImage
@@ -40,6 +40,17 @@ const UserForm = ({ setForm, form }) => {
         />
         <InputBirth setForm={setForm} birth={form?.birth} />
         <InputGender setForm={setForm} />
+        {!snsId && (
+          <>
+            <InputLabel
+              setForm={setForm}
+              field="password"
+              placeholder="패스워드를 입력하세요"
+              title="패스워드"
+              password
+            />
+          </>
+        )}
       </Box>
     </Box>
   );

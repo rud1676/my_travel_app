@@ -11,7 +11,6 @@ const { CFErr, ErrInfo } = require('../../err');
 // 회원가입
 module.exports.join = async (req, res) => {
   const { nickname, phone, name, email, password } = req.body;
-
   const passwordHash = await bcrypt.hash(password, saltRounds);
 
   const isUser = await models.User.findAndCountAll({
@@ -22,6 +21,7 @@ module.exports.join = async (req, res) => {
       }
     }
   });
+  console.log(isUser);
 
   if (isUser.count) {
     res.status(404).send('이미 존재하는 이메일이나 닉네임입니다.');
@@ -43,6 +43,7 @@ module.exports.join = async (req, res) => {
 module.exports.snsJoin = async (req, res) => {
   const { phone, name, email, provider, snsId, birth, gender } = req.body;
   console.log(req.body);
+
   const findUser = await models.User.findOne({
     where: { provider, snsId }
   });

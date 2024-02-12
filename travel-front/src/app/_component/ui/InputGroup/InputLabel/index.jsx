@@ -6,7 +6,13 @@ import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 import styles from "./inputlabel.module.css";
 
-const InputLabel = ({ setForm, field, placeholder, title }) => {
+const InputLabel = ({
+  setForm,
+  field,
+  placeholder,
+  title,
+  password = false,
+}) => {
   const [value, setValue] = useState("");
   useEffect(() => {
     setForm((prev) => {
@@ -19,6 +25,7 @@ const InputLabel = ({ setForm, field, placeholder, title }) => {
     <Box className={styles.profileInputWrapper}>
       <Box className={styles.profileInputText}>{title}</Box>
       <input
+        type={password ? "password" : "text"}
         className={styles.profileInput}
         placeholder={placeholder}
         onChange={(e) => {

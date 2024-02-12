@@ -24,8 +24,18 @@ const Regist = () => {
 
   const [form, setForm] = useState({});
 
-  const mutate = useCustomMutate(
+  const snsMutate = useCustomMutate(
     ({ formData }) => globalApi.snsJoin(formData),
+    "회원가입이 완료되었습니다.",
+    (data) => {
+      LocalSave.setToken(data.token);
+      setToken(data.token);
+      return `/`;
+    }
+  );
+
+  const emailMutate = useCustomMutate(
+    ({ formData }) => globalApi.emailJoin(formData),
     "회원가입이 완료되었습니다.",
     (data) => {
       LocalSave.setToken(data.token);
@@ -41,10 +51,15 @@ const Regist = () => {
         birth: form.birth,
       })
     ) {
-      form["snsId"] = snsId;
-      form["provider"] = "kakao";
-      const formData = MakeFormData(form);
-      mutate({ formData });
+      if (snsId) {
+        form["snsId"] = snsId;
+        form["provider"] = "kakao";
+        const formData = MakeFormData(form);
+        snsMutate({ formData });
+      } else {
+        form["nickname"] = form.name;
+        emailMutate({ formData: form });
+      }
     }
   };
 
@@ -57,7 +72,7 @@ const Regist = () => {
         title="회원 정보 입력"
         color="black"
       />
-      <UserForm form={form} setForm={setForm} />
+      <UserForm form={form} setForm={setForm} snsId={snsId ? snsId : null} />
       <Footer
         onClick={() => {
           onClickRegist(form);

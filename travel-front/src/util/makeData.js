@@ -15,6 +15,7 @@ export const MakeFormData = ({
   birth,
   snsId,
   provider,
+  password,
 }) => {
   const formData = new FormData();
   formData.append("name", name);
@@ -25,5 +26,6 @@ export const MakeFormData = ({
   formData.append("image", file);
   if (snsId) formData.append("snsId", snsId);
   if (provider) formData.append("provider", provider);
+  if (password) formData.append("password", password);
   return formData;
 };
