@@ -1,5 +1,4 @@
 import { GoogleMapAPIKey } from "@/util/keys";
-
 const FetchUrl = (point) =>
   `https://maps.googleapis.com/maps/api/geocode/json?latlng=${point.latitude},${point.longitude}&key=${GoogleMapAPIKey}`;
 
