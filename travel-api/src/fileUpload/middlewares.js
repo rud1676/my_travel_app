@@ -6,7 +6,7 @@ const uuid = require('uuid');
 const path = require('path');
 const { Err, ErrInfo } = require('../err');
 
-AWS.config.loadFromPath(`${__dirname}/awsconfig.json`);
+AWS.config.loadFromPath(`${__dirname}/awsconfig.js`);
 
 const imageExt = ['jpg', 'jpeg', 'bmp', 'png'];
 
